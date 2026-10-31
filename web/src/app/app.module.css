@@ -1,0 +1,72 @@
+.page {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-7);
+}
+
+.hero {
+  display: grid;
+  gap: var(--space-4);
+  padding-block: var(--space-6) var(--space-2);
+}
+
+.hero h1 {
+  font-size: var(--text-xl);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+
+.heroLede {
+  font-size: var(--text-m);
+  color: var(--ink-soft);
+}
+
+.meta {
+  font-size: var(--text-s);
+  color: var(--ink-soft);
+}
+
+.loading {
+  display: grid;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+}
+
+.footnote {
+  font-size: var(--text-s);
+  color: var(--ink-soft);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin: 0;
+}
+
+.stats dt {
+  font-size: var(--text-s);
+  color: var(--ink-soft);
+}
+
+.stats dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-l);
+}
+
+.footer {
+  margin-top: var(--space-7);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule);
+  font-size: var(--text-s);
+  color: var(--ink-soft);
+}
+
+@media (min-width: 720px) {
+  .page {
+    padding-inline: var(--space-5);
+  }
+}

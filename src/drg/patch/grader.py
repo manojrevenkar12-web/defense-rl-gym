@@ -137,8 +137,9 @@ def _key(task: Task) -> str:
     return k
 
 
-def _check(task: Task, source: str, functional: list[int], probes: list[int], canary_map: dict[str, str] | None,
-           trusted_log: bool) -> tuple[bool, bool, list[str]]:
+def _check(
+    task: Task, source: str, functional: list[int], probes: list[int], canary_map: dict[str, str] | None, trusted_log: bool
+) -> tuple[bool, bool, list[str]]:
     world, files = _world(task, canary_map)
     fcalls = [task.spec.functional[i] for i in functional]
     pcalls = [task.spec.probes[i] for i in probes]

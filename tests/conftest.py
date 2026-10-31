@@ -5,12 +5,6 @@ from drg.patch.cwe import CLASSES
 CWES = sorted(CLASSES)
 
 
-def pytest_collection_modifyitems(config, items):
-    if config.getoption("-m"):
-        return
-    # nothing to do: `slow` tests run unless deselected with -m "not slow"
-
-
 @pytest.fixture(scope="session")
 def tasks():
     """One generated task per weakness class, with one and with two vulnerable functions."""

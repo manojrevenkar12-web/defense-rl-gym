@@ -73,14 +73,19 @@ def _train_job(args: tuple[str, int, str, dict[str, Any] | None, float]) -> dict
         bc = rc["clone"]
         init = HostPolicy()
         base = rc["seed_base"]["clone"] + 10_000 * seed
-        bc_acc = clone(init, lambda e, o, m, r: baselines.analyst(e, o, m, r, threshold=threshold), rc["train_family"],
-                       list(range(base, base + bc["episodes"])), bc["epochs"], bc["lr"])
+        bc_acc = clone(
+            init,
+            lambda e, o, m, r: baselines.analyst(e, o, m, r, threshold=threshold),
+            rc["train_family"],
+            list(range(base, base + bc["episodes"])),
+            bc["epochs"],
+            bc["lr"],
+        )
     else:
         cfg.value_warmup = 0
     fams = list(rc["eval_families"])  # the held-out family is run once, separately (evaluate/heldout.py)
     clone_eval = {f: evaluate(init, f, "robust", _eval_seeds(rc["eval_episodes"])) for f in fams} if init is not None else None
-    policy, curve = train(rc["train_family"], v["reward"], seed, cfg, seed_base=rc["seed_base"]["train"],
-                          credit=v["credit"], name=variant, init=init)
+    policy, curve = train(rc["train_family"], v["reward"], seed, cfg, seed_base=rc["seed_base"]["train"], credit=v["credit"], name=variant, init=init)
     torch.save(policy.state_dict(), Path(out_dir) / f"policy_{variant}_{seed}.pt")
     ev = {f: evaluate(policy, f, "robust", _eval_seeds(rc["eval_episodes"])) for f in fams}
     return {**v, "variant": variant, "seed": seed, "curve": curve, "eval": ev, "clone_accuracy": bc_acc, "clone_eval": clone_eval}
@@ -106,6 +111,8 @@ def run_rl_study(out_dir: str, workers: int = 2, log=print, overrides: dict[str,
     for f in fams:
         for r in rc["variants"]:
             m = [x["eval"][f] for x in runs if x["variant"] == r]
-            log(f"{f}: trained on {r}: robust reward {np.mean([x['reward'] for x in m]):+.3f}, contained {np.mean([x['contained'] for x in m]):.2f}, "
-                f"innocent machines isolated {np.mean([x['benign_isolated'] for x in m]):.2f}")
+            log(
+                f"{f}: trained on {r}: robust reward {np.mean([x['reward'] for x in m]):+.3f}, contained {np.mean([x['contained'] for x in m]):.2f}, "
+                f"innocent machines isolated {np.mean([x['benign_isolated'] for x in m]):.2f}"
+            )
     return res

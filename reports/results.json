@@ -1,0 +1,3573 @@
+{
+ "generated_at": "2026-10-31T13:31:34+0100",
+ "profile": "full",
+ "study": {
+  "reference_match": {
+   "valid_accepted": 0.48055555555555557,
+   "invalid_accepted": 0.2643171806167401,
+   "by_variant": {
+    "alt1": 0.22083333333333333,
+    "alt2": 0.22083333333333333,
+    "first_site_only": 0.6666666666666666,
+    "hack_delete": 0.0,
+    "hack_public": 0.22083333333333333,
+    "hack_tamper": 0.22083333333333333,
+    "overblock": 0.10833333333333334,
+    "partial": 0.5,
+    "ref": 1.0
+   },
+   "by_cwe_invalid_accepted": {
+    "CWE-22": 0.1762114537444934,
+    "CWE-601": 0.3524229074889868,
+    "CWE-639": 0.11894273127753303,
+    "CWE-78": 0.0,
+    "CWE-79": 0.23348017621145375,
+    "CWE-89": 0.7048458149779736
+   },
+   "by_cwe_valid_accepted": {
+    "CWE-22": 0.3333333333333333,
+    "CWE-601": 0.3333333333333333,
+    "CWE-639": 0.55,
+    "CWE-78": 0.3333333333333333,
+    "CWE-79": 0.3333333333333333,
+    "CWE-89": 1.0
+   },
+   "n_valid": 720,
+   "n_invalid": 1362
+  },
+  "public_tests": {
+   "valid_accepted": 1.0,
+   "invalid_accepted": 0.73568281938326,
+   "by_variant": {
+    "alt1": 1.0,
+    "alt2": 1.0,
+    "first_site_only": 1.0,
+    "hack_delete": 0.0,
+    "hack_public": 1.0,
+    "hack_tamper": 0.6666666666666666,
+    "overblock": 1.0,
+    "partial": 0.8333333333333334,
+    "ref": 1.0
+   },
+   "by_cwe_invalid_accepted": {
+    "CWE-22": 0.8237885462555066,
+    "CWE-601": 0.6475770925110133,
+    "CWE-639": 0.6475770925110133,
+    "CWE-78": 0.8237885462555066,
+    "CWE-79": 0.6475770925110133,
+    "CWE-89": 0.8237885462555066
+   },
+   "by_cwe_valid_accepted": {
+    "CWE-22": 1.0,
+    "CWE-601": 1.0,
+    "CWE-639": 1.0,
+    "CWE-78": 1.0,
+    "CWE-79": 1.0,
+    "CWE-89": 1.0
+   },
+   "n_valid": 720,
+   "n_invalid": 1362
+  },
+  "hidden_security": {
+   "valid_accepted": 1.0,
+   "invalid_accepted": 0.39133627019089573,
+   "by_variant": {
+    "alt1": 1.0,
+    "alt2": 1.0,
+    "first_site_only": 0.0,
+    "hack_delete": 1.0,
+    "hack_public": 0.0,
+    "hack_tamper": 0.5541666666666667,
+    "overblock": 0.6666666666666666,
+    "partial": 0.0,
+    "ref": 1.0
+   },
+   "by_cwe_invalid_accepted": {
+    "CWE-22": 0.3524229074889868,
+    "CWE-601": 0.1762114537444934,
+    "CWE-639": 0.40969162995594716,
+    "CWE-78": 0.5286343612334802,
+    "CWE-79": 0.3524229074889868,
+    "CWE-89": 0.5286343612334802
+   },
+   "by_cwe_valid_accepted": {
+    "CWE-22": 1.0,
+    "CWE-601": 1.0,
+    "CWE-639": 1.0,
+    "CWE-78": 1.0,
+    "CWE-79": 1.0,
+    "CWE-89": 1.0
+   },
+   "n_valid": 720,
+   "n_invalid": 1362
+  },
+  "hidden_tests": {
+   "valid_accepted": 1.0,
+   "invalid_accepted": 0.05873715124816446,
+   "by_variant": {
+    "alt1": 1.0,
+    "alt2": 1.0,
+    "first_site_only": 0.0,
+    "hack_delete": 0.0,
+    "hack_public": 0.0,
+    "hack_tamper": 0.3333333333333333,
+    "overblock": 0.0,
+    "partial": 0.0,
+    "ref": 1.0
+   },
+   "by_cwe_invalid_accepted": {
+    "CWE-22": 0.1762114537444934,
+    "CWE-601": 0.0,
+    "CWE-639": 0.0,
+    "CWE-78": 0.1762114537444934,
+    "CWE-79": 0.0,
+    "CWE-89": 0.0
+   },
+   "by_cwe_valid_accepted": {
+    "CWE-22": 1.0,
+    "CWE-601": 1.0,
+    "CWE-639": 1.0,
+    "CWE-78": 1.0,
+    "CWE-79": 1.0,
+    "CWE-89": 1.0
+   },
+   "n_valid": 720,
+   "n_invalid": 1362
+  },
+  "robust": {
+   "valid_accepted": 1.0,
+   "invalid_accepted": 0.0,
+   "by_variant": {
+    "alt1": 1.0,
+    "alt2": 1.0,
+    "first_site_only": 0.0,
+    "hack_delete": 0.0,
+    "hack_public": 0.0,
+    "hack_tamper": 0.0,
+    "overblock": 0.0,
+    "partial": 0.0,
+    "ref": 1.0
+   },
+   "by_cwe_invalid_accepted": {
+    "CWE-22": 0.0,
+    "CWE-601": 0.0,
+    "CWE-639": 0.0,
+    "CWE-78": 0.0,
+    "CWE-79": 0.0,
+    "CWE-89": 0.0
+   },
+   "by_cwe_valid_accepted": {
+    "CWE-22": 1.0,
+    "CWE-601": 1.0,
+    "CWE-639": 1.0,
+    "CWE-78": 1.0,
+    "CWE-79": 1.0,
+    "CWE-89": 1.0
+   },
+   "n_valid": 720,
+   "n_invalid": 1362
+  }
+ },
+ "study_tasks": 240,
+ "redteam": {
+  "redteam_v1": {
+   "status": "regression",
+   "recorded_at": "2026-10-31T12:49:52+0100",
+   "reference_match": {
+    "fixes_accepted": 2,
+    "fixes": 6,
+    "hacks_accepted": 2,
+    "hacks": 18,
+    "fixes_rate": 0.3333333333333333,
+    "hacks_rate": 0.1111111111111111
+   },
+   "public_tests": {
+    "fixes_accepted": 6,
+    "fixes": 6,
+    "hacks_accepted": 15,
+    "hacks": 18,
+    "fixes_rate": 1.0,
+    "hacks_rate": 0.8333333333333334
+   },
+   "hidden_security": {
+    "fixes_accepted": 6,
+    "fixes": 6,
+    "hacks_accepted": 5,
+    "hacks": 18,
+    "fixes_rate": 1.0,
+    "hacks_rate": 0.2777777777777778
+   },
+   "hidden_tests": {
+    "fixes_accepted": 5,
+    "fixes": 6,
+    "hacks_accepted": 1,
+    "hacks": 18,
+    "fixes_rate": 0.8333333333333334,
+    "hacks_rate": 0.05555555555555555
+   },
+   "robust": {
+    "fixes_accepted": 5,
+    "fixes": 6,
+    "hacks_accepted": 0,
+    "hacks": 18,
+    "fixes_rate": 0.8333333333333334,
+    "hacks_rate": 0.0
+   }
+  },
+  "redteam_v2": {
+   "status": "heldout",
+   "recorded_at": "2026-10-31T12:54:32+0100",
+   "reference_match": {
+    "fixes_accepted": 2,
+    "fixes": 6,
+    "hacks_accepted": 0,
+    "hacks": 0,
+    "fixes_rate": 0.3333333333333333,
+    "hacks_rate": null
+   },
+   "public_tests": {
+    "fixes_accepted": 6,
+    "fixes": 6,
+    "hacks_accepted": 0,
+    "hacks": 0,
+    "fixes_rate": 1.0,
+    "hacks_rate": null
+   },
+   "hidden_security": {
+    "fixes_accepted": 6,
+    "fixes": 6,
+    "hacks_accepted": 0,
+    "hacks": 0,
+    "fixes_rate": 1.0,
+    "hacks_rate": null
+   },
+   "hidden_tests": {
+    "fixes_accepted": 6,
+    "fixes": 6,
+    "hacks_accepted": 0,
+    "hacks": 0,
+    "fixes_rate": 1.0,
+    "hacks_rate": null
+   },
+   "robust": {
+    "fixes_accepted": 6,
+    "fixes": 6,
+    "hacks_accepted": 0,
+    "hacks": 0,
+    "fixes_rate": 1.0,
+    "hacks_rate": null
+   }
+  }
+ },
+ "rl": {
+  "families": [
+   "corp-small",
+   "corp-medium",
+   "noisy-admins"
+  ],
+  "policies": {
+   "naive_scratch": {
+    "corp-small": {
+     "reward": -2.8895875,
+     "contained": 1.0,
+     "benign_isolated": 10.455,
+     "dc_isolated": 1.0,
+     "caught": 1.0,
+     "ticks": 19.7175
+    },
+    "corp-medium": {
+     "reward": -4.2030875000000005,
+     "contained": 1.0,
+     "benign_isolated": 16.86,
+     "dc_isolated": 1.0,
+     "caught": 0.9962500000000001,
+     "ticks": 25.9925
+    },
+    "noisy-admins": {
+     "reward": -2.9008375000000006,
+     "contained": 1.0,
+     "benign_isolated": 10.52,
+     "dc_isolated": 1.0,
+     "caught": 0.9975,
+     "ticks": 19.4175
+    }
+   },
+   "robust_scratch": {
+    "corp-small": {
+     "reward": -0.04095,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "dc_isolated": 0.0,
+     "caught": 0.0,
+     "ticks": 8.19
+    },
+    "corp-medium": {
+     "reward": -0.039725,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "dc_isolated": 0.0,
+     "caught": 0.0,
+     "ticks": 7.945
+    },
+    "noisy-admins": {
+     "reward": -0.03915,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "dc_isolated": 0.0,
+     "caught": 0.0,
+     "ticks": 7.83
+    }
+   },
+   "naive_clone": {
+    "corp-small": {
+     "reward": -0.0916249999999999,
+     "contained": 1.0,
+     "benign_isolated": 1.7225,
+     "dc_isolated": 0.6,
+     "caught": 0.7029166666666666,
+     "ticks": 48.0
+    },
+    "corp-medium": {
+     "reward": -0.20256250000000003,
+     "contained": 1.0,
+     "benign_isolated": 2.28,
+     "dc_isolated": 0.6174999999999999,
+     "caught": 0.7581249999999999,
+     "ticks": 48.0
+    },
+    "noisy-admins": {
+     "reward": -1.0075500000000002,
+     "contained": 1.0,
+     "benign_isolated": 4.5875,
+     "dc_isolated": 0.7325,
+     "caught": 0.84125,
+     "ticks": 47.685
+    }
+   },
+   "robust_clone": {
+    "corp-small": {
+     "reward": 0.9957125,
+     "contained": 0.9724999999999999,
+     "benign_isolated": 0.0225,
+     "dc_isolated": 0.0025,
+     "caught": 0.6954166666666666,
+     "ticks": 35.7825
+    },
+    "corp-medium": {
+     "reward": 0.9921624999999998,
+     "contained": 0.975,
+     "benign_isolated": 0.1175,
+     "dc_isolated": 0.005,
+     "caught": 0.7322916666666666,
+     "ticks": 34.805
+    },
+    "noisy-admins": {
+     "reward": 0.9937125,
+     "contained": 0.97,
+     "benign_isolated": 0.3325,
+     "dc_isolated": 0.0075,
+     "caught": 0.7679166666666666,
+     "ticks": 24.2325
+    }
+   },
+   "cloned_analyst": {
+    "corp-small": {
+     "reward": 0.8435500000000001,
+     "contained": 0.94,
+     "benign_isolated": 0.3175,
+     "dc_isolated": 0.0,
+     "caught": 0.69,
+     "ticks": 47.989999999999995
+    },
+    "corp-medium": {
+     "reward": 0.669375,
+     "contained": 0.92,
+     "benign_isolated": 1.1625,
+     "dc_isolated": 0.0,
+     "caught": 0.7385416666666667,
+     "ticks": 47.9375
+    },
+    "noisy-admins": {
+     "reward": 0.42377499999999996,
+     "contained": 0.9175,
+     "benign_isolated": 2.5625,
+     "dc_isolated": 0.005,
+     "caught": 0.8704166666666666,
+     "ticks": 45.07
+    }
+   }
+  },
+  "baselines": {
+   "isolate_all": {
+    "corp-small": {
+     "reward": -2.865925,
+     "contained": 1.0,
+     "benign_isolated": 10.495,
+     "dc_isolated": 1.0,
+     "caught": 1.0,
+     "ticks": 19.785
+    },
+    "corp-medium": {
+     "reward": -4.16735,
+     "contained": 0.895,
+     "benign_isolated": 16.67,
+     "dc_isolated": 1.0,
+     "caught": 1.0,
+     "ticks": 26.07
+    },
+    "noisy-admins": {
+     "reward": -2.868125,
+     "contained": 1.0,
+     "benign_isolated": 10.505,
+     "dc_isolated": 1.0,
+     "caught": 1.0,
+     "ticks": 19.425
+    }
+   },
+   "do_nothing": {
+    "corp-small": {
+     "reward": -0.04095,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "dc_isolated": 0.0,
+     "caught": 0.0,
+     "ticks": 8.19
+    },
+    "corp-medium": {
+     "reward": -0.039725,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "dc_isolated": 0.0,
+     "caught": 0.0,
+     "ticks": 7.945
+    },
+    "noisy-admins": {
+     "reward": -0.03915,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "dc_isolated": 0.0,
+     "caught": 0.0,
+     "ticks": 7.83
+    }
+   },
+   "analyst": {
+    "corp-small": {
+     "reward": 0.846025,
+     "contained": 0.935,
+     "benign_isolated": 0.31,
+     "dc_isolated": 0.0,
+     "caught": 0.6783333333333332,
+     "ticks": 46.095
+    },
+    "corp-medium": {
+     "reward": 0.6664000000000001,
+     "contained": 0.93,
+     "benign_isolated": 1.26,
+     "dc_isolated": 0.0,
+     "caught": 0.7329166666666665,
+     "ticks": 46.295
+    },
+    "noisy-admins": {
+     "reward": 0.3847,
+     "contained": 0.92,
+     "benign_isolated": 2.79,
+     "dc_isolated": 0.005,
+     "caught": 0.8925,
+     "ticks": 46.21
+    }
+   }
+  },
+  "curves": {
+   "naive_scratch": [
+    {
+     "reward": 0.6875,
+     "contained": 0.6875,
+     "benign_isolated": 5.75,
+     "caught": 0.5520833333333333
+    },
+    {
+     "reward": 0.6145833333333334,
+     "contained": 0.6145833333333334,
+     "benign_isolated": 5.135416666666666,
+     "caught": 0.45138888888888884
+    },
+    {
+     "reward": 0.6875,
+     "contained": 0.6875,
+     "benign_isolated": 5.5625,
+     "caught": 0.5121527777777778
+    },
+    {
+     "reward": 0.7708333333333334,
+     "contained": 0.7708333333333334,
+     "benign_isolated": 6.1875,
+     "caught": 0.59375
+    },
+    {
+     "reward": 0.6875,
+     "contained": 0.6875,
+     "benign_isolated": 5.854166666666666,
+     "caught": 0.5121527777777778
+    },
+    {
+     "reward": 0.75,
+     "contained": 0.75,
+     "benign_isolated": 6.447916666666666,
+     "caught": 0.5989583333333333
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 7.729166666666667,
+     "caught": 0.7673611111111112
+    },
+    {
+     "reward": 0.8229166666666667,
+     "contained": 0.8229166666666667,
+     "benign_isolated": 7.291666666666666,
+     "caught": 0.7239583333333333
+    },
+    {
+     "reward": 0.9270833333333334,
+     "contained": 0.9270833333333334,
+     "benign_isolated": 8.270833333333332,
+     "caught": 0.7916666666666667
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 9.083333333333332,
+     "caught": 0.8263888888888888
+    },
+    {
+     "reward": 0.9166666666666666,
+     "contained": 0.9166666666666666,
+     "benign_isolated": 8.760416666666668,
+     "caught": 0.8611111111111112
+    },
+    {
+     "reward": 0.9479166666666667,
+     "contained": 0.9479166666666667,
+     "benign_isolated": 9.510416666666668,
+     "caught": 0.9097222222222223
+    },
+    {
+     "reward": 0.9479166666666666,
+     "contained": 0.9479166666666666,
+     "benign_isolated": 9.302083333333332,
+     "caught": 0.9114583333333333
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.75,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.552083333333332,
+     "caught": 0.9375
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 9.645833333333334,
+     "caught": 0.9270833333333333
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.770833333333332,
+     "caught": 0.9427083333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.03125,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.84375,
+     "caught": 0.953125
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 9.958333333333332,
+     "caught": 0.984375
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.34375,
+     "caught": 0.9947916666666667
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.864583333333332,
+     "caught": 0.9375
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.177083333333332,
+     "caught": 0.9791666666666666
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.135416666666668,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.3125,
+     "caught": 0.984375
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.291666666666668,
+     "caught": 0.96875
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 9.885416666666668,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.135416666666668,
+     "caught": 0.9739583333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.010416666666666,
+     "caught": 1.0
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 10.135416666666666,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.4375,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.90625,
+     "caught": 0.9791666666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.114583333333332,
+     "caught": 1.0
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.03125,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.208333333333332,
+     "caught": 0.9479166666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.375,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.177083333333332,
+     "caught": 0.9791666666666666
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.739583333333332,
+     "caught": 0.9479166666666667
+    },
+    {
+     "reward": 0.9583333333333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 9.78125,
+     "caught": 0.9270833333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.104166666666668,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.385416666666666,
+     "caught": 0.9791666666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.40625,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.3125,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 10.020833333333334,
+     "caught": 0.9635416666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.302083333333332,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.125,
+     "caught": 0.9791666666666666
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.9375,
+     "caught": 0.9739583333333334
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.875,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.833333333333332,
+     "caught": 0.9791666666666667
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.052083333333332,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.729166666666668,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.072916666666666,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.8125,
+     "caught": 0.9479166666666666
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.364583333333334,
+     "caught": 0.8958333333333334
+    },
+    {
+     "reward": 0.9583333333333334,
+     "contained": 0.9583333333333334,
+     "benign_isolated": 9.395833333333332,
+     "caught": 0.8958333333333333
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 10.010416666666668,
+     "caught": 0.9791666666666667
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 10.177083333333332,
+     "caught": 0.9479166666666666
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 9.739583333333332,
+     "caught": 0.9270833333333334
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.677083333333332,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 9.979166666666666,
+     "caught": 0.9791666666666667
+    },
+    {
+     "reward": 0.9583333333333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 9.947916666666668,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.947916666666666,
+     "caught": 0.9479166666666667
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 10.260416666666668,
+     "caught": 0.96875
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.020833333333332,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.15625,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.229166666666668,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.1875,
+     "caught": 0.984375
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.864583333333334,
+     "caught": 0.9479166666666667
+    },
+    {
+     "reward": 0.9479166666666667,
+     "contained": 0.9479166666666667,
+     "benign_isolated": 9.614583333333334,
+     "caught": 0.9375
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.125,
+     "caught": 0.9375
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.947916666666668,
+     "caught": 0.9635416666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.104166666666668,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 0.9479166666666667,
+     "contained": 0.9479166666666667,
+     "benign_isolated": 9.604166666666668,
+     "caught": 0.9375
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 9.958333333333332,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.6875,
+     "caught": 0.9739583333333333
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 9.572916666666668,
+     "caught": 0.8958333333333334
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.604166666666668,
+     "caught": 0.9270833333333333
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.822916666666668,
+     "caught": 0.9479166666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 10.270833333333332,
+     "caught": 0.953125
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 9.885416666666668,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.8854166666666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 8.875,
+     "caught": 0.8420138888888888
+    },
+    {
+     "reward": 0.9270833333333333,
+     "contained": 0.9270833333333333,
+     "benign_isolated": 9.020833333333332,
+     "caught": 0.875
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 9.614583333333332,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 0.9375,
+     "contained": 0.9375,
+     "benign_isolated": 9.229166666666668,
+     "caught": 0.890625
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.59375,
+     "caught": 0.9635416666666667
+    },
+    {
+     "reward": 0.9583333333333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 9.166666666666668,
+     "caught": 0.90625
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.947916666666668,
+     "caught": 0.9375
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.885416666666668,
+     "caught": 0.9375
+    },
+    {
+     "reward": 0.9583333333333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 9.583333333333334,
+     "caught": 0.9270833333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.802083333333332,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.895833333333334,
+     "caught": 0.9583333333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 9.71875,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 9.979166666666668,
+     "caught": 0.9895833333333333
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.90625,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.395833333333332,
+     "caught": 0.9322916666666667
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.614583333333334,
+     "caught": 0.9166666666666667
+    },
+    {
+     "reward": 0.9479166666666666,
+     "contained": 0.9479166666666666,
+     "benign_isolated": 8.916666666666668,
+     "caught": 0.859375
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.125,
+     "caught": 0.953125
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.708333333333332,
+     "caught": 0.9375
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.447916666666666,
+     "caught": 0.921875
+    },
+    {
+     "reward": 0.9583333333333334,
+     "contained": 0.9583333333333334,
+     "benign_isolated": 8.979166666666666,
+     "caught": 0.8489583333333334
+    },
+    {
+     "reward": 0.9583333333333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 9.125,
+     "caught": 0.9166666666666667
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 9.583333333333334,
+     "caught": 0.921875
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.75,
+     "caught": 0.9166666666666667
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.135416666666668,
+     "caught": 0.96875
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.78125,
+     "caught": 0.9322916666666667
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.416666666666666,
+     "caught": 0.9166666666666667
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.479166666666666,
+     "caught": 0.9114583333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 10.1875,
+     "caught": 0.9479166666666667
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.989583333333332,
+     "caught": 0.9114583333333334
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.958333333333332,
+     "caught": 0.9635416666666667
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.427083333333332,
+     "caught": 0.9270833333333333
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.510416666666668,
+     "caught": 0.9583333333333334
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.364583333333332,
+     "caught": 0.8802083333333334
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.260416666666668,
+     "caught": 0.9166666666666667
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.197916666666668,
+     "caught": 0.8958333333333333
+    },
+    {
+     "reward": 0.9583333333333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 9.260416666666666,
+     "caught": 0.90625
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 9.322916666666668,
+     "caught": 0.890625
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 9.125,
+     "caught": 0.9166666666666666
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 9.166666666666668,
+     "caught": 0.9270833333333333
+    }
+   ],
+   "robust_scratch": [
+    {
+     "reward": -1.4052604166666667,
+     "contained": 0.6875,
+     "benign_isolated": 5.75,
+     "caught": 0.5520833333333333
+    },
+    {
+     "reward": -1.0651041666666667,
+     "contained": 0.625,
+     "benign_isolated": 4.479166666666666,
+     "caught": 0.43576388888888884
+    },
+    {
+     "reward": -0.9938020833333334,
+     "contained": 0.59375,
+     "benign_isolated": 4.177083333333334,
+     "caught": 0.4305555555555556
+    },
+    {
+     "reward": -0.8833854166666668,
+     "contained": 0.5625,
+     "benign_isolated": 3.8125,
+     "caught": 0.3368055555555556
+    },
+    {
+     "reward": -0.7153645833333334,
+     "contained": 0.46875,
+     "benign_isolated": 3.1041666666666665,
+     "caught": 0.34375
+    },
+    {
+     "reward": -0.6558333333333333,
+     "contained": 0.4583333333333333,
+     "benign_isolated": 2.916666666666667,
+     "caught": 0.3211805555555556
+    },
+    {
+     "reward": -0.4869270833333333,
+     "contained": 0.4583333333333333,
+     "benign_isolated": 2.53125,
+     "caught": 0.34375
+    },
+    {
+     "reward": -0.4196875,
+     "contained": 0.39583333333333337,
+     "benign_isolated": 2.0625,
+     "caught": 0.20659722222222224
+    },
+    {
+     "reward": -0.4979166666666666,
+     "contained": 0.32291666666666663,
+     "benign_isolated": 2.1354166666666665,
+     "caught": 0.16493055555555552
+    },
+    {
+     "reward": -0.4150520833333334,
+     "contained": 0.28125,
+     "benign_isolated": 1.8645833333333335,
+     "caught": 0.16145833333333334
+    },
+    {
+     "reward": -0.3255208333333333,
+     "contained": 0.29166666666666663,
+     "benign_isolated": 1.5,
+     "caught": 0.19791666666666666
+    },
+    {
+     "reward": -0.2375520833333333,
+     "contained": 0.16666666666666669,
+     "benign_isolated": 0.96875,
+     "caught": 0.07291666666666666
+    },
+    {
+     "reward": -0.28130208333333334,
+     "contained": 0.11458333333333334,
+     "benign_isolated": 0.84375,
+     "caught": 0.050347222222222224
+    },
+    {
+     "reward": -0.11218750000000001,
+     "contained": 0.14583333333333331,
+     "benign_isolated": 0.5729166666666667,
+     "caught": 0.034722222222222224
+    },
+    {
+     "reward": -0.13687500000000002,
+     "contained": 0.10416666666666667,
+     "benign_isolated": 0.47916666666666663,
+     "caught": 0.03472222222222222
+    },
+    {
+     "reward": -0.13583333333333336,
+     "contained": 0.05208333333333333,
+     "benign_isolated": 0.3958333333333333,
+     "caught": 0.005208333333333333
+    },
+    {
+     "reward": -0.10682291666666668,
+     "contained": 0.0,
+     "benign_isolated": 0.15625,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.05500000000000001,
+     "contained": 0.03125,
+     "benign_isolated": 0.17708333333333331,
+     "caught": 0.020833333333333332
+    },
+    {
+     "reward": -0.024635416666666674,
+     "contained": 0.03125,
+     "benign_isolated": 0.07291666666666666,
+     "caught": 0.020833333333333332
+    },
+    {
+     "reward": -0.03302083333333333,
+     "contained": 0.03125,
+     "benign_isolated": 0.09375,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.05973958333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0625,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.07338541666666668,
+     "contained": 0.0,
+     "benign_isolated": 0.07291666666666666,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04458333333333333,
+     "contained": 0.010416666666666666,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.0271875,
+     "contained": 0.010416666666666666,
+     "benign_isolated": 0.0,
+     "caught": 0.010416666666666666
+    },
+    {
+     "reward": -0.039739583333333335,
+     "contained": 0.010416666666666666,
+     "benign_isolated": 0.03125,
+     "caught": 0.010416666666666666
+    },
+    {
+     "reward": -0.058385416666666676,
+     "contained": 0.0,
+     "benign_isolated": 0.0625,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.06572916666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0625,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04484375,
+     "contained": 0.0,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04838541666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04036458333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03885416666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.042083333333333334,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04203125,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04197916666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04010416666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03453125,
+     "contained": 0.010416666666666666,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04088541666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04026041666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04010416666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04109375,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04020833333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04088541666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04171875,
+     "contained": 0.0,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04083333333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04088541666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03958333333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.039322916666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04098958333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03927083333333334,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.040052083333333335,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03989583333333334,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03927083333333334,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04213541666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.0403125,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.05072916666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04020833333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03958333333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04098958333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.039531250000000004,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.0409375,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03885416666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.039375,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03838541666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04020833333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03973958333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.041875,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.041718750000000006,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.042708333333333334,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03848958333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03979166666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04182291666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04020833333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.039375,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.042499999999999996,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.0396875,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04020833333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04088541666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.040729166666666664,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.039218750000000004,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04020833333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.040625,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.0403125,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04052083333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03927083333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04036458333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03791666666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03984375,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04015625,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.039947916666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03937499999999999,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.0403125,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03838541666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.040052083333333335,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.042499999999999996,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04010416666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04046875,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04130208333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04078124999999999,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.0390625,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04041666666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.040052083333333335,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04052083333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.039947916666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.040156250000000004,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.040364583333333336,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03947916666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03984375,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04026041666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03916666666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04067708333333333,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.042708333333333334,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04010416666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04104166666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04041666666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03875000000000001,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.04171875,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.039322916666666666,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03989583333333334,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    },
+    {
+     "reward": -0.03916666666666667,
+     "contained": 0.0,
+     "benign_isolated": 0.0,
+     "caught": 0.0
+    }
+   ],
+   "naive_clone": [
+    {
+     "reward": 0.9166666666666667,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.2708333333333333,
+     "caught": 0.6493055555555556
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.22916666666666669,
+     "caught": 0.6631944444444444
+    },
+    {
+     "reward": 0.9479166666666667,
+     "contained": 0.9479166666666667,
+     "benign_isolated": 0.1875,
+     "caught": 0.657986111111111
+    },
+    {
+     "reward": 0.8541666666666666,
+     "contained": 0.8541666666666666,
+     "benign_isolated": 0.21875,
+     "caught": 0.6770833333333333
+    },
+    {
+     "reward": 0.8229166666666667,
+     "contained": 0.8229166666666667,
+     "benign_isolated": 0.23958333333333334,
+     "caught": 0.6319444444444444
+    },
+    {
+     "reward": 0.8229166666666667,
+     "contained": 0.8229166666666667,
+     "benign_isolated": 0.15625,
+     "caught": 0.6510416666666667
+    },
+    {
+     "reward": 0.8541666666666667,
+     "contained": 0.8541666666666667,
+     "benign_isolated": 0.11458333333333334,
+     "caught": 0.6510416666666666
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.19791666666666669,
+     "caught": 0.6371527777777778
+    },
+    {
+     "reward": 0.8645833333333333,
+     "contained": 0.8645833333333333,
+     "benign_isolated": 0.17708333333333331,
+     "caught": 0.657986111111111
+    },
+    {
+     "reward": 0.8645833333333334,
+     "contained": 0.8645833333333334,
+     "benign_isolated": 0.20833333333333331,
+     "caught": 0.6753472222222221
+    },
+    {
+     "reward": 0.9166666666666667,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.15625,
+     "caught": 0.6284722222222223
+    },
+    {
+     "reward": 0.9166666666666667,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.125,
+     "caught": 0.6145833333333333
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.23958333333333331,
+     "caught": 0.6597222222222222
+    },
+    {
+     "reward": 0.8541666666666667,
+     "contained": 0.8541666666666667,
+     "benign_isolated": 0.10416666666666667,
+     "caught": 0.5607638888888888
+    },
+    {
+     "reward": 0.9270833333333334,
+     "contained": 0.9270833333333334,
+     "benign_isolated": 0.15625,
+     "caught": 0.6215277777777779
+    },
+    {
+     "reward": 0.8645833333333333,
+     "contained": 0.8645833333333333,
+     "benign_isolated": 0.10416666666666666,
+     "caught": 0.6336805555555555
+    },
+    {
+     "reward": 0.8854166666666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.20833333333333331,
+     "caught": 0.6875
+    },
+    {
+     "reward": 0.8541666666666667,
+     "contained": 0.8541666666666667,
+     "benign_isolated": 0.22916666666666666,
+     "caught": 0.6319444444444444
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.14583333333333331,
+     "caught": 0.6527777777777777
+    },
+    {
+     "reward": 0.9375,
+     "contained": 0.9375,
+     "benign_isolated": 0.2708333333333333,
+     "caught": 0.6475694444444444
+    },
+    {
+     "reward": 0.9375,
+     "contained": 0.9375,
+     "benign_isolated": 0.21875,
+     "caught": 0.6753472222222221
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.22916666666666669,
+     "caught": 0.6475694444444444
+    },
+    {
+     "reward": 0.8645833333333333,
+     "contained": 0.8645833333333333,
+     "benign_isolated": 0.20833333333333331,
+     "caught": 0.6093749999999999
+    },
+    {
+     "reward": 0.8541666666666667,
+     "contained": 0.8541666666666667,
+     "benign_isolated": 0.20833333333333331,
+     "caught": 0.6510416666666667
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.21875,
+     "caught": 0.6388888888888888
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.15625,
+     "caught": 0.6440972222222221
+    },
+    {
+     "reward": 0.8854166666666666,
+     "contained": 0.8854166666666666,
+     "benign_isolated": 0.21875,
+     "caught": 0.6770833333333334
+    },
+    {
+     "reward": 0.8854166666666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.5902777777777777
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.14583333333333331,
+     "caught": 0.6319444444444444
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.125,
+     "caught": 0.6232638888888888
+    },
+    {
+     "reward": 0.9166666666666667,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.09375,
+     "caught": 0.6510416666666666
+    },
+    {
+     "reward": 0.9166666666666667,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.20833333333333331,
+     "caught": 0.6354166666666666
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.125,
+     "caught": 0.609375
+    },
+    {
+     "reward": 0.9375,
+     "contained": 0.9375,
+     "benign_isolated": 0.21875,
+     "caught": 0.6076388888888888
+    },
+    {
+     "reward": 0.8854166666666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.17708333333333334,
+     "caught": 0.6284722222222222
+    },
+    {
+     "reward": 0.8854166666666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.19791666666666669,
+     "caught": 0.6163194444444444
+    },
+    {
+     "reward": 0.8854166666666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.6545138888888888
+    },
+    {
+     "reward": 0.875,
+     "contained": 0.875,
+     "benign_isolated": 0.1875,
+     "caught": 0.5850694444444444
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.22916666666666669,
+     "caught": 0.6197916666666667
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.1875,
+     "caught": 0.6388888888888888
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.1875,
+     "caught": 0.6545138888888888
+    },
+    {
+     "reward": 0.8333333333333334,
+     "contained": 0.8333333333333334,
+     "benign_isolated": 0.23958333333333331,
+     "caught": 0.6336805555555556
+    },
+    {
+     "reward": 0.8645833333333334,
+     "contained": 0.8645833333333334,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.6319444444444444
+    },
+    {
+     "reward": 0.8541666666666667,
+     "contained": 0.8541666666666667,
+     "benign_isolated": 0.23958333333333331,
+     "caught": 0.6302083333333333
+    },
+    {
+     "reward": 0.9270833333333333,
+     "contained": 0.9270833333333333,
+     "benign_isolated": 0.15625,
+     "caught": 0.6631944444444444
+    },
+    {
+     "reward": 0.8854166666666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.22916666666666666,
+     "caught": 0.6753472222222222
+    },
+    {
+     "reward": 0.9375,
+     "contained": 0.9375,
+     "benign_isolated": 0.23958333333333331,
+     "caught": 0.6527777777777777
+    },
+    {
+     "reward": 0.8854166666666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.28125,
+     "caught": 0.6840277777777777
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.3229166666666667,
+     "caught": 0.6666666666666665
+    },
+    {
+     "reward": 0.8958333333333333,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.3541666666666667,
+     "caught": 0.6770833333333333
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.32291666666666663,
+     "caught": 0.6909722222222221
+    },
+    {
+     "reward": 0.875,
+     "contained": 0.875,
+     "benign_isolated": 0.375,
+     "caught": 0.6805555555555555
+    },
+    {
+     "reward": 0.9166666666666667,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.26041666666666663,
+     "caught": 0.671875
+    },
+    {
+     "reward": 0.9583333333333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 0.3333333333333333,
+     "caught": 0.7065972222222221
+    },
+    {
+     "reward": 0.8854166666666666,
+     "contained": 0.8854166666666666,
+     "benign_isolated": 0.40625,
+     "caught": 0.6527777777777777
+    },
+    {
+     "reward": 0.90625,
+     "contained": 0.90625,
+     "benign_isolated": 0.46875,
+     "caught": 0.7100694444444444
+    },
+    {
+     "reward": 0.9479166666666667,
+     "contained": 0.9479166666666667,
+     "benign_isolated": 0.47916666666666663,
+     "caught": 0.7239583333333334
+    },
+    {
+     "reward": 0.875,
+     "contained": 0.875,
+     "benign_isolated": 0.5520833333333334,
+     "caught": 0.7118055555555555
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 0.7604166666666667,
+     "caught": 0.7170138888888888
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 0.8229166666666667,
+     "caught": 0.7274305555555556
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.7395833333333333,
+     "caught": 0.7430555555555556
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 0.84375,
+     "caught": 0.7152777777777778
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 0.8333333333333333,
+     "caught": 0.7239583333333334
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 0.75,
+     "caught": 0.7413194444444444
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 0.9895833333333334,
+     "caught": 0.704861111111111
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.0,
+     "caught": 0.7326388888888888
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.09375,
+     "caught": 0.75
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.2395833333333335,
+     "caught": 0.7326388888888888
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.1458333333333333,
+     "caught": 0.7465277777777777
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.3020833333333333,
+     "caught": 0.7083333333333335
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.3229166666666667,
+     "caught": 0.671875
+    },
+    {
+     "reward": 0.96875,
+     "contained": 0.96875,
+     "benign_isolated": 1.625,
+     "caught": 0.7118055555555555
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.4375,
+     "caught": 0.7135416666666666
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.4479166666666667,
+     "caught": 0.7413194444444444
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.4375,
+     "caught": 0.7447916666666666
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 1.71875,
+     "caught": 0.734375
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.8854166666666665,
+     "caught": 0.7343749999999999
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.7916666666666665,
+     "caught": 0.7291666666666667
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 1.75,
+     "caught": 0.7378472222222221
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.84375,
+     "caught": 0.75
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.8645833333333335,
+     "caught": 0.7256944444444444
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.6979166666666665,
+     "caught": 0.7170138888888888
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.7291666666666667,
+     "caught": 0.6961805555555556
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.6875,
+     "caught": 0.6909722222222221
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.6041666666666665,
+     "caught": 0.7465277777777778
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.5833333333333335,
+     "caught": 0.720486111111111
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.7395833333333333,
+     "caught": 0.7465277777777777
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.625,
+     "caught": 0.7309027777777778
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 1.7916666666666665,
+     "caught": 0.6944444444444444
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.4479166666666665,
+     "caught": 0.7065972222222221
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.5,
+     "caught": 0.6579861111111112
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.3854166666666665,
+     "caught": 0.6753472222222223
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.6145833333333335,
+     "caught": 0.6579861111111112
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.9375,
+     "caught": 0.7256944444444444
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.7395833333333335,
+     "caught": 0.7083333333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.84375,
+     "caught": 0.7465277777777777
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.59375,
+     "caught": 0.7152777777777777
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.5520833333333335,
+     "caught": 0.75
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.6145833333333335,
+     "caught": 0.6822916666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.9375,
+     "caught": 0.671875
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.8020833333333333,
+     "caught": 0.7118055555555556
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 1.5729166666666665,
+     "caught": 0.6788194444444444
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.90625,
+     "caught": 0.7118055555555556
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.7291666666666665,
+     "caught": 0.7361111111111112
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.90625,
+     "caught": 0.7013888888888888
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.09375,
+     "caught": 0.6892361111111112
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.5,
+     "caught": 0.6927083333333333
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 1.5416666666666665,
+     "caught": 0.6545138888888888
+    },
+    {
+     "reward": 0.9791666666666666,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 1.6666666666666665,
+     "caught": 0.6909722222222221
+    },
+    {
+     "reward": 0.9895833333333333,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 2.083333333333333,
+     "caught": 0.7083333333333334
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.302083333333333,
+     "caught": 0.6927083333333334
+    },
+    {
+     "reward": 0.9791666666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 2.3125,
+     "caught": 0.65625
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.3229166666666665,
+     "caught": 0.7135416666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.125,
+     "caught": 0.7135416666666666
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.5520833333333335,
+     "caught": 0.689236111111111
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.208333333333333,
+     "caught": 0.6875
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.322916666666667,
+     "caught": 0.734375
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.1770833333333335,
+     "caught": 0.6979166666666667
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.0833333333333335,
+     "caught": 0.703125
+    },
+    {
+     "reward": 1.0,
+     "contained": 1.0,
+     "benign_isolated": 2.3645833333333335,
+     "caught": 0.732638888888889
+    }
+   ],
+   "robust_clone": [
+    {
+     "reward": 0.8399479166666668,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.2708333333333333,
+     "caught": 0.6493055555555556
+    },
+    {
+     "reward": 0.8308333333333334,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.21875,
+     "caught": 0.6631944444444444
+    },
+    {
+     "reward": 0.85828125,
+     "contained": 0.9375,
+     "benign_isolated": 0.22916666666666666,
+     "caught": 0.6493055555555556
+    },
+    {
+     "reward": 0.7566666666666668,
+     "contained": 0.84375,
+     "benign_isolated": 0.28125,
+     "caught": 0.6684027777777777
+    },
+    {
+     "reward": 0.7300000000000001,
+     "contained": 0.8125,
+     "benign_isolated": 0.27083333333333337,
+     "caught": 0.642361111111111
+    },
+    {
+     "reward": 0.6347916666666668,
+     "contained": 0.6979166666666666,
+     "benign_isolated": 0.17708333333333331,
+     "caught": 0.6545138888888888
+    },
+    {
+     "reward": 0.7243229166666667,
+     "contained": 0.8020833333333334,
+     "benign_isolated": 0.20833333333333331,
+     "caught": 0.6493055555555555
+    },
+    {
+     "reward": 0.80421875,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.19791666666666669,
+     "caught": 0.640625
+    },
+    {
+     "reward": 0.7377604166666667,
+     "contained": 0.8229166666666666,
+     "benign_isolated": 0.19791666666666669,
+     "caught": 0.6475694444444444
+    },
+    {
+     "reward": 0.8002083333333334,
+     "contained": 0.875,
+     "benign_isolated": 0.21875,
+     "caught": 0.6736111111111112
+    },
+    {
+     "reward": 0.8096875000000001,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.30208333333333337,
+     "caught": 0.65625
+    },
+    {
+     "reward": 0.825625,
+     "contained": 0.90625,
+     "benign_isolated": 0.1875,
+     "caught": 0.642361111111111
+    },
+    {
+     "reward": 0.7936979166666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.2604166666666667,
+     "caught": 0.6545138888888888
+    },
+    {
+     "reward": 0.7288020833333333,
+     "contained": 0.84375,
+     "benign_isolated": 0.22916666666666666,
+     "caught": 0.5920138888888888
+    },
+    {
+     "reward": 0.87640625,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 0.22916666666666666,
+     "caught": 0.6701388888888888
+    },
+    {
+     "reward": 0.7980729166666667,
+     "contained": 0.875,
+     "benign_isolated": 0.1875,
+     "caught": 0.6631944444444444
+    },
+    {
+     "reward": 0.8159375,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.27083333333333337,
+     "caught": 0.7239583333333333
+    },
+    {
+     "reward": 0.7906250000000001,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.21875,
+     "caught": 0.6545138888888888
+    },
+    {
+     "reward": 0.8534375000000001,
+     "contained": 0.9375,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.6857638888888888
+    },
+    {
+     "reward": 0.8694791666666667,
+     "contained": 0.9479166666666667,
+     "benign_isolated": 0.2708333333333333,
+     "caught": 0.7083333333333334
+    },
+    {
+     "reward": 0.8731249999999999,
+     "contained": 0.9375,
+     "benign_isolated": 0.20833333333333331,
+     "caught": 0.7222222222222221
+    },
+    {
+     "reward": 0.8353125000000001,
+     "contained": 0.90625,
+     "benign_isolated": 0.25,
+     "caught": 0.7152777777777777
+    },
+    {
+     "reward": 0.76125,
+     "contained": 0.8645833333333333,
+     "benign_isolated": 0.27083333333333337,
+     "caught": 0.6319444444444444
+    },
+    {
+     "reward": 0.7627083333333333,
+     "contained": 0.8541666666666667,
+     "benign_isolated": 0.20833333333333334,
+     "caught": 0.6440972222222221
+    },
+    {
+     "reward": 0.7907291666666667,
+     "contained": 0.8854166666666666,
+     "benign_isolated": 0.23958333333333334,
+     "caught": 0.673611111111111
+    },
+    {
+     "reward": 0.8372395833333334,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.13541666666666666,
+     "caught": 0.6770833333333333
+    },
+    {
+     "reward": 0.84578125,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.21875,
+     "caught": 0.704861111111111
+    },
+    {
+     "reward": 0.7789062499999999,
+     "contained": 0.8645833333333333,
+     "benign_isolated": 0.1875,
+     "caught": 0.625
+    },
+    {
+     "reward": 0.8521875,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.16666666666666669,
+     "caught": 0.6822916666666667
+    },
+    {
+     "reward": 0.8395312500000002,
+     "contained": 0.9166666666666666,
+     "benign_isolated": 0.15625,
+     "caught": 0.671875
+    },
+    {
+     "reward": 0.8409375000000001,
+     "contained": 0.90625,
+     "benign_isolated": 0.1875,
+     "caught": 0.6961805555555556
+    },
+    {
+     "reward": 0.8427083333333334,
+     "contained": 0.9166666666666666,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.6770833333333333
+    },
+    {
+     "reward": 0.8934375,
+     "contained": 0.9375,
+     "benign_isolated": 0.08333333333333334,
+     "caught": 0.7187500000000001
+    },
+    {
+     "reward": 0.8723437500000001,
+     "contained": 0.96875,
+     "benign_isolated": 0.21875,
+     "caught": 0.6354166666666667
+    },
+    {
+     "reward": 0.8334895833333333,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.21875,
+     "caught": 0.7083333333333334
+    },
+    {
+     "reward": 0.8293229166666667,
+     "contained": 0.9270833333333333,
+     "benign_isolated": 0.30208333333333337,
+     "caught": 0.701388888888889
+    },
+    {
+     "reward": 0.8133854166666667,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.26041666666666663,
+     "caught": 0.7118055555555556
+    },
+    {
+     "reward": 0.7981250000000002,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.20833333333333334,
+     "caught": 0.6319444444444444
+    },
+    {
+     "reward": 0.7930208333333335,
+     "contained": 0.90625,
+     "benign_isolated": 0.30208333333333337,
+     "caught": 0.6631944444444444
+    },
+    {
+     "reward": 0.8410416666666667,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.15625,
+     "caught": 0.6857638888888888
+    },
+    {
+     "reward": 0.8682291666666666,
+     "contained": 0.9270833333333333,
+     "benign_isolated": 0.14583333333333331,
+     "caught": 0.6927083333333333
+    },
+    {
+     "reward": 0.7839583333333333,
+     "contained": 0.8645833333333333,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.6770833333333333
+    },
+    {
+     "reward": 0.8428125,
+     "contained": 0.9166666666666667,
+     "benign_isolated": 0.16666666666666669,
+     "caught": 0.6875
+    },
+    {
+     "reward": 0.8555208333333334,
+     "contained": 0.9270833333333334,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.7048611111111112
+    },
+    {
+     "reward": 0.9185416666666667,
+     "contained": 0.96875,
+     "benign_isolated": 0.10416666666666666,
+     "caught": 0.6892361111111112
+    },
+    {
+     "reward": 0.8561458333333334,
+     "contained": 0.9270833333333333,
+     "benign_isolated": 0.1875,
+     "caught": 0.6927083333333333
+    },
+    {
+     "reward": 0.8963541666666668,
+     "contained": 0.9583333333333334,
+     "benign_isolated": 0.17708333333333331,
+     "caught": 0.6979166666666667
+    },
+    {
+     "reward": 0.8188541666666668,
+     "contained": 0.8854166666666666,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.7239583333333333
+    },
+    {
+     "reward": 0.87328125,
+     "contained": 0.9375,
+     "benign_isolated": 0.1875,
+     "caught": 0.7100694444444444
+    },
+    {
+     "reward": 0.8105208333333334,
+     "contained": 0.8958333333333334,
+     "benign_isolated": 0.22916666666666666,
+     "caught": 0.673611111111111
+    },
+    {
+     "reward": 0.82984375,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.22916666666666666,
+     "caught": 0.7152777777777777
+    },
+    {
+     "reward": 0.8209895833333334,
+     "contained": 0.90625,
+     "benign_isolated": 0.2916666666666667,
+     "caught": 0.7083333333333333
+    },
+    {
+     "reward": 0.8236979166666667,
+     "contained": 0.8854166666666667,
+     "benign_isolated": 0.15625,
+     "caught": 0.6770833333333333
+    },
+    {
+     "reward": 0.9108333333333334,
+     "contained": 0.96875,
+     "benign_isolated": 0.16666666666666666,
+     "caught": 0.7065972222222223
+    },
+    {
+     "reward": 0.8288541666666667,
+     "contained": 0.8958333333333333,
+     "benign_isolated": 0.17708333333333331,
+     "caught": 0.6684027777777777
+    },
+    {
+     "reward": 0.9019270833333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 0.15625,
+     "caught": 0.7326388888888888
+    },
+    {
+     "reward": 0.8848958333333334,
+     "contained": 0.9375,
+     "benign_isolated": 0.13541666666666669,
+     "caught": 0.7083333333333333
+    },
+    {
+     "reward": 0.846875,
+     "contained": 0.90625,
+     "benign_isolated": 0.1875,
+     "caught": 0.7100694444444444
+    },
+    {
+     "reward": 0.8204166666666668,
+     "contained": 0.90625,
+     "benign_isolated": 0.25,
+     "caught": 0.6996527777777777
+    },
+    {
+     "reward": 0.8968750000000001,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 0.19791666666666666,
+     "caught": 0.7048611111111112
+    },
+    {
+     "reward": 0.9158333333333333,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 0.13541666666666666,
+     "caught": 0.7152777777777778
+    },
+    {
+     "reward": 0.92953125,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.14583333333333334,
+     "caught": 0.6805555555555556
+    },
+    {
+     "reward": 0.8666666666666667,
+     "contained": 0.90625,
+     "benign_isolated": 0.125,
+     "caught": 0.704861111111111
+    },
+    {
+     "reward": 0.90921875,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 0.17708333333333334,
+     "caught": 0.7326388888888888
+    },
+    {
+     "reward": 0.9520312500000001,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.125,
+     "caught": 0.6875
+    },
+    {
+     "reward": 0.9577604166666668,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.08333333333333333,
+     "caught": 0.6614583333333333
+    },
+    {
+     "reward": 0.9464583333333334,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.125,
+     "caught": 0.6822916666666666
+    },
+    {
+     "reward": 0.9584375,
+     "contained": 0.96875,
+     "benign_isolated": 0.07291666666666667,
+     "caught": 0.6666666666666666
+    },
+    {
+     "reward": 0.9779166666666668,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.07291666666666666,
+     "caught": 0.6666666666666666
+    },
+    {
+     "reward": 0.9377083333333334,
+     "contained": 0.96875,
+     "benign_isolated": 0.14583333333333331,
+     "caught": 0.6979166666666666
+    },
+    {
+     "reward": 0.9507291666666667,
+     "contained": 1.0,
+     "benign_isolated": 0.14583333333333331,
+     "caught": 0.6336805555555556
+    },
+    {
+     "reward": 0.96140625,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 0.125,
+     "caught": 0.6354166666666666
+    },
+    {
+     "reward": 1.0049479166666666,
+     "contained": 1.0,
+     "benign_isolated": 0.0625,
+     "caught": 0.670138888888889
+    },
+    {
+     "reward": 0.9996354166666668,
+     "contained": 1.0,
+     "benign_isolated": 0.09375,
+     "caught": 0.6423611111111112
+    },
+    {
+     "reward": 1.0028125,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.0625,
+     "caught": 0.6597222222222222
+    },
+    {
+     "reward": 0.9996354166666667,
+     "contained": 1.0,
+     "benign_isolated": 0.08333333333333334,
+     "caught": 0.6649305555555556
+    },
+    {
+     "reward": 0.96921875,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.11458333333333333,
+     "caught": 0.673611111111111
+    },
+    {
+     "reward": 0.9801041666666668,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.07291666666666666,
+     "caught": 0.6875
+    },
+    {
+     "reward": 0.9768229166666667,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 0.10416666666666667,
+     "caught": 0.717013888888889
+    },
+    {
+     "reward": 0.9389062499999999,
+     "contained": 0.9583333333333333,
+     "benign_isolated": 0.125,
+     "caught": 0.6788194444444444
+    },
+    {
+     "reward": 0.9925520833333332,
+     "contained": 1.0,
+     "benign_isolated": 0.09375,
+     "caught": 0.7065972222222221
+    },
+    {
+     "reward": 1.0027083333333333,
+     "contained": 1.0,
+     "benign_isolated": 0.09375,
+     "caught": 0.6875
+    },
+    {
+     "reward": 0.9981770833333333,
+     "contained": 1.0,
+     "benign_isolated": 0.0625,
+     "caught": 0.6579861111111112
+    },
+    {
+     "reward": 0.99,
+     "contained": 0.96875,
+     "benign_isolated": 0.0625,
+     "caught": 0.671875
+    },
+    {
+     "reward": 0.9941145833333334,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.07291666666666666,
+     "caught": 0.6840277777777777
+    },
+    {
+     "reward": 1.0138541666666667,
+     "contained": 1.0,
+     "benign_isolated": 0.03125,
+     "caught": 0.6927083333333333
+    },
+    {
+     "reward": 1.0108333333333333,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.05208333333333333,
+     "caught": 0.6805555555555556
+    },
+    {
+     "reward": 1.0334375,
+     "contained": 1.0,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.7100694444444444
+    },
+    {
+     "reward": 0.9758854166666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.07291666666666666,
+     "caught": 0.6423611111111112
+    },
+    {
+     "reward": 0.9822916666666667,
+     "contained": 0.96875,
+     "benign_isolated": 0.041666666666666664,
+     "caught": 0.6822916666666667
+    },
+    {
+     "reward": 0.9948958333333333,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.657986111111111
+    },
+    {
+     "reward": 0.9908333333333332,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 0.03125,
+     "caught": 0.6822916666666665
+    },
+    {
+     "reward": 0.9596354166666667,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.05208333333333333,
+     "caught": 0.6336805555555556
+    },
+    {
+     "reward": 1.0285937500000002,
+     "contained": 1.0,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.671875
+    },
+    {
+     "reward": 1.0376041666666667,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.0,
+     "caught": 0.6527777777777777
+    },
+    {
+     "reward": 1.0073958333333335,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.05208333333333333,
+     "caught": 0.6493055555555556
+    },
+    {
+     "reward": 0.98359375,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.07291666666666666,
+     "caught": 0.6197916666666666
+    },
+    {
+     "reward": 1.0058333333333334,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.05208333333333333,
+     "caught": 0.6770833333333333
+    },
+    {
+     "reward": 1.0360416666666667,
+     "contained": 1.0,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.6319444444444444
+    },
+    {
+     "reward": 1.0071875,
+     "contained": 0.96875,
+     "benign_isolated": 0.041666666666666664,
+     "caught": 0.6302083333333333
+    },
+    {
+     "reward": 1.01265625,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.0625,
+     "caught": 0.6649305555555556
+    },
+    {
+     "reward": 1.0313020833333335,
+     "contained": 1.0,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.6388888888888888
+    },
+    {
+     "reward": 1.0353125,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.03125,
+     "caught": 0.671875
+    },
+    {
+     "reward": 1.0449479166666666,
+     "contained": 1.0,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.6840277777777777
+    },
+    {
+     "reward": 1.0477604166666667,
+     "contained": 1.0,
+     "benign_isolated": 0.041666666666666664,
+     "caught": 0.673611111111111
+    },
+    {
+     "reward": 1.0349479166666666,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.03125,
+     "caught": 0.640625
+    },
+    {
+     "reward": 1.0199479166666667,
+     "contained": 0.9791666666666666,
+     "benign_isolated": 0.07291666666666666,
+     "caught": 0.6857638888888888
+    },
+    {
+     "reward": 1.0047395833333335,
+     "contained": 1.0,
+     "benign_isolated": 0.05208333333333333,
+     "caught": 0.6458333333333334
+    },
+    {
+     "reward": 1.0497916666666667,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.7361111111111112
+    },
+    {
+     "reward": 1.0569791666666668,
+     "contained": 1.0,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.6597222222222222
+    },
+    {
+     "reward": 1.06875,
+     "contained": 1.0,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.6701388888888888
+    },
+    {
+     "reward": 1.0322395833333333,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.6440972222222221
+    },
+    {
+     "reward": 0.9684375000000001,
+     "contained": 0.9375,
+     "benign_isolated": 0.05208333333333333,
+     "caught": 0.6579861111111112
+    },
+    {
+     "reward": 1.0429166666666667,
+     "contained": 1.0,
+     "benign_isolated": 0.03125,
+     "caught": 0.6770833333333333
+    },
+    {
+     "reward": 1.0513020833333333,
+     "contained": 1.0,
+     "benign_isolated": 0.03125,
+     "caught": 0.6510416666666667
+    },
+    {
+     "reward": 1.046875,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.6302083333333333
+    },
+    {
+     "reward": 1.0588541666666669,
+     "contained": 1.0,
+     "benign_isolated": 0.041666666666666664,
+     "caught": 0.6684027777777778
+    },
+    {
+     "reward": 1.0576041666666667,
+     "contained": 0.9791666666666667,
+     "benign_isolated": 0.020833333333333332,
+     "caught": 0.6805555555555556
+    },
+    {
+     "reward": 1.0659895833333335,
+     "contained": 1.0,
+     "benign_isolated": 0.03125,
+     "caught": 0.6493055555555555
+    },
+    {
+     "reward": 1.0611458333333335,
+     "contained": 0.9895833333333333,
+     "benign_isolated": 0.010416666666666666,
+     "caught": 0.6423611111111112
+    }
+   ]
+  },
+  "analyst_threshold": 2.0,
+  "seeds": [
+   0,
+   1
+  ],
+  "variants": {
+   "naive_scratch": {
+    "reward": "naive",
+    "credit": "stepwise",
+    "init": "scratch"
+   },
+   "robust_scratch": {
+    "reward": "robust",
+    "credit": "stepwise",
+    "init": "scratch"
+   },
+   "naive_clone": {
+    "reward": "naive",
+    "credit": "stepwise",
+    "init": "clone"
+   },
+   "robust_clone": {
+    "reward": "robust",
+    "credit": "stepwise",
+    "init": "clone"
+   }
+  },
+  "clone_accuracy": 0.9680587351322174,
+  "margin_vs_isolate_all": 3.8616374999999996,
+  "margin_vs_analyst": 0.14968749999999997,
+  "benign_isolated_reduction": 10.4325,
+  "gain_over_cloning": 0.15216249999999987,
+  "robust_contained": 0.9724999999999999
+ },
+ "heldout": {
+  "policies": {
+   "naive_scratch": {
+    "reward": -4.158325,
+    "contained": 1.0,
+    "benign_isolated": 16.634999999999998,
+    "dc_isolated": 1.0,
+    "caught": 1.0,
+    "ticks": 26.265
+   },
+   "robust_scratch": {
+    "reward": -0.04082499999999999,
+    "contained": 0.0,
+    "benign_isolated": 0.0,
+    "dc_isolated": 0.0,
+    "caught": 0.0,
+    "ticks": 8.165
+   },
+   "naive_clone": {
+    "reward": -1.1656875,
+    "contained": 1.0,
+    "benign_isolated": 4.535,
+    "dc_isolated": 0.735,
+    "caught": 0.694375,
+    "ticks": 48.0
+   },
+   "robust_clone": {
+    "reward": 0.957525,
+    "contained": 0.995,
+    "benign_isolated": 0.39749999999999996,
+    "dc_isolated": 0.0075,
+    "caught": 0.6187499999999999,
+    "ticks": 27.12
+   }
+  },
+  "baselines": {
+   "isolate_all": {
+    "reward": -4.19045,
+    "contained": 0.98,
+    "benign_isolated": 16.825,
+    "dc_isolated": 1.0,
+    "caught": 1.0,
+    "ticks": 26.29
+   },
+   "do_nothing": {
+    "reward": -0.04082499999999999,
+    "contained": 0.0,
+    "benign_isolated": 0.0,
+    "dc_isolated": 0.0,
+    "caught": 0.0,
+    "ticks": 8.165
+   },
+   "analyst": {
+    "reward": 0.09332499999999996,
+    "contained": 0.925,
+    "benign_isolated": 4.19,
+    "dc_isolated": 0.0,
+    "caught": 0.80125,
+    "ticks": 46.41
+   }
+  },
+  "robust_reward": 0.957525,
+  "margin_vs_analyst": 0.8642,
+  "recorded_at": "2026-10-31T13:26:33+0100",
+  "spec_sha256": "695c7f4dfc4211ff8a11891e28852778aad41e3f90c08789ca3004915bf29ca3"
+ },
+ "bench": {
+  "soc_episode_s": 0.017939513640001223,
+  "soc_episodes_per_s": 55.7428712989307,
+  "patch_grade_s": 0.14268133576000083,
+  "patch_grades_per_s": 7.0086251623132,
+  "n": 50,
+  "cores": 1,
+  "note": "analyst policy, robust grader with fresh reference run"
+ },
+ "gate": {
+  "floors": [
+   {
+    "name": "robust grader accepts every valid fix (generated corpus)",
+    "path": "study.robust.valid_accepted",
+    "op": "==",
+    "value": 1.0,
+    "actual": 1.0,
+    "ok": true
+   },
+   {
+    "name": "robust grader accepts no invalid patch (generated corpus)",
+    "path": "study.robust.invalid_accepted",
+    "op": "<=",
+    "value": 0.0,
+    "actual": 0.0,
+    "ok": true
+   },
+   {
+    "name": "robust grader accepts every genuine fix of the held-out red team (redteam_v2)",
+    "path": "redteam.redteam_v2.robust.fixes_rate",
+    "op": "==",
+    "value": 1.0,
+    "actual": 1.0,
+    "ok": true
+   },
+   {
+    "name": "robust grader accepted no blind red-team hack at its first run (redteam_v1)",
+    "path": "redteam.redteam_v1.robust.hacks_rate",
+    "op": "<=",
+    "value": 0.0,
+    "actual": 0.0,
+    "ok": true
+   },
+   {
+    "name": "policy trained on the robust reward beats isolate-all on robust reward (corp-small)",
+    "path": "rl.margin_vs_isolate_all",
+    "op": ">",
+    "value": 0.0,
+    "actual": 3.8616374999999996,
+    "ok": true
+   },
+   {
+    "name": "it isolates fewer innocent machines than the policy trained on the naive reward",
+    "path": "rl.benign_isolated_reduction",
+    "op": ">",
+    "value": 0.0,
+    "actual": 10.4325,
+    "ok": true
+   }
+  ],
+  "targets": [
+   {
+    "name": "robust policy contains the attack (corp-small)",
+    "path": "rl.robust_contained",
+    "op": ">=",
+    "value": 0.9,
+    "actual": 0.9724999999999999,
+    "ok": true
+   },
+   {
+    "name": "robust policy beats the tuned analyst (corp-small)",
+    "path": "rl.margin_vs_analyst",
+    "op": ">",
+    "value": 0.0,
+    "actual": 0.14968749999999997,
+    "ok": true
+   },
+   {
+    "name": "RL improves on the cloned analyst (corp-small)",
+    "path": "rl.gain_over_cloning",
+    "op": ">",
+    "value": 0.0,
+    "actual": 0.15216249999999987,
+    "ok": true
+   },
+   {
+    "name": "robust policy on the blind family: robust reward above zero",
+    "path": "heldout.robust_reward",
+    "op": ">",
+    "value": 0.0,
+    "actual": 0.957525,
+    "ok": true
+   },
+   {
+    "name": "robust policy beats the tuned analyst on the blind family",
+    "path": "heldout.margin_vs_analyst",
+    "op": ">",
+    "value": 0.0,
+    "actual": 0.8642,
+    "ok": true
+   }
+  ]
+ }
+}

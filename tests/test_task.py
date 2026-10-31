@@ -2,9 +2,11 @@
 
 import json
 
-from conftest import CWES
+from drg.patch.cwe import CLASSES
 from drg.patch.env import PatchEnv
 from drg.patch.task import make_task
+
+CWES = sorted(CLASSES)
 
 
 def test_tasks_are_deterministic_in_their_seed():

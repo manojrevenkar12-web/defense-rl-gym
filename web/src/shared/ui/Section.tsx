@@ -27,20 +27,16 @@ export function Section({
   );
 }
 
-export function Card({ children, label }: { children: ReactNode; label?: string }) {
-  return (
-    <div className={styles.card} aria-label={label} role={label ? 'group' : undefined}>
-      {children}
-    </div>
-  );
+export function Card({ children }: { children: ReactNode }) {
+  return <div className={styles.card}>{children}</div>;
 }
 
 /** A table or chart wider than a phone scrolls inside itself; it is focusable so keyboards can scroll it. */
 export function ScrollRegion({ label, children }: { label: string; children: ReactNode }) {
   return (
-    // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be reachable by keyboard
-    <div className={styles.scroll} role="region" aria-label={label} tabIndex={0}>
+    // biome-ignore lint/a11y/noNoninteractiveTabindex: a scrollable region must be reachable by keyboard (WCAG 2.1.1)
+    <section className={styles.scroll} aria-label={label} tabIndex={0}>
       {children}
-    </div>
+    </section>
   );
 }

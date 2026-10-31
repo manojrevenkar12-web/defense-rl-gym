@@ -110,8 +110,7 @@ def test_tool_view_never_shows_the_truth():
 def test_tool_view_report_scores_the_report_separately_from_reward():
     env = SocEnv(9)
     tr = truth(env.sc)
-    out, r, done = env.step("submit_report", {"compromised_hosts": tr["hosts"], "compromised_accounts": tr["accounts"],
-                                              "initial_access": tr["initial_access"]})
+    out, r, done = env.step("submit_report", {"compromised_hosts": tr["hosts"], "compromised_accounts": tr["accounts"], "initial_access": tr["initial_access"]})
     assert done and out["report_initial_access_ok"] and 0 <= out["report_hosts_f1"] <= 1
     assert r == out["reward"]
 

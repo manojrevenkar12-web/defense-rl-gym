@@ -27,7 +27,7 @@ def test_policy_and_features_do_not_use_truth():
 
 def test_feature_function_reads_only_visible_events():
     src = (SRC / "soc" / "env.py").read_text()
-    body = src[src.index("def host_features"): src.index("@dataclass\nclass FeatureEnv")]
+    body = src[src.index("def host_features") : src.index("@dataclass\nclass FeatureEnv")]
     assert "sc.visible()" in body and "sc.events" not in body and "compromised" not in body and "plan" not in body
 
 

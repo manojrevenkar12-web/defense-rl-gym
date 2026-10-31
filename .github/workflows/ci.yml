@@ -1,0 +1,95 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: python (lint, tests, release gate on the committed run)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: { python-version: '3.12', cache: pip }
+      - name: Install (CPU PyTorch)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[rl,server,dev]"
+      - run: ruff check src tests scripts
+      - run: ruff format --check src tests scripts
+      - name: Tests (shell, graders on every labelled patch, sandbox, world, rewards, PPO, harness, server, isolation, held-out rule)
+        run: |
+          set -o pipefail
+          pytest -m "not slow" 2>&1 | tee unit.log || { echo "::error title=tests::$(grep -E 'FAILED|Error' unit.log | tail -8 | tr '\n' ' ' | cut -c1-900)"; exit 1; }
+      - name: Release gate on the committed full run
+        run: drg gate --profile full
+
+  pipeline:
+    name: pipeline end to end (quick profile)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: { python-version: '3.12', cache: pip }
+      - run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[rl,server,dev]"
+      - name: Quick pipeline and slow tests
+        run: |
+          set -o pipefail
+          pytest -m slow -x 2>&1 | tee slow.log || { echo "::error title=slow tests::$(grep -E 'Error|assert|FAIL' slow.log | tail -8 | tr '\n' ' ' | cut -c1-900)"; exit 1; }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: quick-run, path: 'runs/quick/*.json' }
+
+  image:
+    name: environment server image (build, run, smoke over HTTP)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with: { context: ., file: deploy/Dockerfile, tags: 'drg-server:ci', load: true, cache-from: type=gha, cache-to: 'type=gha,mode=max' }
+      - name: Run the server on a read-only filesystem as a non-root user
+        run: |
+          docker run -d --name drg -p 8080:8080 --read-only --tmpfs /tmp drg-server:ci
+          for i in $(seq 1 30); do curl -sf localhost:8080/healthz && break; sleep 1; done
+      - uses: actions/setup-python@v6
+        with: { python-version: '3.12', cache: pip }
+      - name: Episodes over HTTP equal episodes run locally
+        run: |
+          pip install -e ".[server]" httpx
+          set -o pipefail
+          python scripts/smoke.py http://localhost:8080 2>&1 | tee smoke.log || { echo "::error title=smoke::$(tail -12 smoke.log | tr '\n' ' ' | cut -c1-900)"; exit 1; }
+      - name: Diagnostics
+        if: failure()
+        run: docker logs drg | tail -80
+
+  web:
+    name: dashboard (lint, types, unit, build, browser + axe)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run: { working-directory: web }
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22, cache: npm, cache-dependency-path: web/package-lock.json }
+      - run: npm ci --no-audit --no-fund
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run e2e

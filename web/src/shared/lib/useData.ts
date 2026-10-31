@@ -25,7 +25,10 @@ export function useData(base = '.'): Load & { retry: () => void } {
       })
       .catch((e: Error) => {
         if (e.name !== 'AbortError')
-          setState({ status: 'error', message: `The results could not be loaded (${e.message}). Check the connection and try again.` });
+          setState({
+            status: 'error',
+            message: `The results could not be loaded (${e.message}). Check the connection and try again.`,
+          });
       });
     return () => ctl.abort();
   }, [base, attempt]);

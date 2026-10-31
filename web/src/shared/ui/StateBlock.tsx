@@ -1,7 +1,15 @@
 import type { ReactNode } from 'react';
 import styles from './ui.module.css';
 
-export function Skeleton({ height, width = '100%', label }: { height: number | string; width?: number | string; label?: string }) {
+export function Skeleton({
+  height,
+  width = '100%',
+  label,
+}: {
+  height: number | string;
+  width?: number | string;
+  label?: string;
+}) {
   return label ? (
     <div className="skeleton" style={{ height, width }} role="status" aria-label={label} />
   ) : (

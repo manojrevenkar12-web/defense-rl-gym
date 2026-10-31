@@ -1,0 +1,103 @@
+.board {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.note {
+  color: var(--ink-soft);
+  font-size: var(--text-s);
+}
+
+.table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-s);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-3);
+  text-align: end;
+  border-bottom: 1px solid var(--rule);
+}
+
+.table thead th {
+  font-weight: 700;
+  vertical-align: bottom;
+}
+
+.table th[scope='row'],
+.table thead th:first-child {
+  text-align: start;
+}
+
+.table th[scope='row'] {
+  font-weight: 400;
+}
+
+tr[data-trained] th[scope='row'] {
+  font-weight: 700;
+}
+
+.rewardHead {
+  text-align: start !important;
+}
+
+.rewardCell {
+  text-align: start !important;
+  min-width: 220px;
+}
+
+.reward {
+  display: grid;
+  grid-template-columns: 5ch 1fr;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.value {
+  font-weight: 700;
+  text-align: end;
+}
+
+.bar {
+  position: relative;
+  height: 12px;
+  display: block;
+}
+
+.zero {
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  bottom: -4px;
+  width: 1px;
+  background: var(--ink-soft);
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: var(--radius-s);
+}
+
+td[data-bad] {
+  color: var(--unearned);
+  font-weight: 700;
+}
+
+.swatch {
+  display: inline-block;
+  width: 18px;
+  height: 0;
+  border-top: 3px solid;
+  vertical-align: middle;
+  margin-inline-end: var(--space-2);
+}
+
+.swatch[data-dashed] {
+  border-top-style: dashed;
+}

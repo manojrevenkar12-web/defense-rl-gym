@@ -1,0 +1,52 @@
+.table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: var(--text-s);
+  font-variant-numeric: tabular-nums;
+}
+
+.table th,
+.table td {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--rule);
+  text-align: end;
+}
+
+.table thead th {
+  font-weight: 700;
+}
+
+.table th[scope='row'],
+.table thead th:first-child {
+  text-align: start;
+}
+
+.table th[scope='row'] {
+  font-weight: 400;
+}
+
+.table th[data-robust] {
+  font-weight: 700;
+  color: var(--robust);
+}
+
+.sub {
+  font-weight: 400 !important;
+  color: var(--ink-soft);
+}
+
+.status {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+td[data-kind='unearned'] {
+  color: var(--unearned);
+  font-weight: 700;
+}
+
+td[data-kind='withheld'] {
+  color: var(--withheld);
+  font-weight: 700;
+}

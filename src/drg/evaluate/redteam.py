@@ -44,10 +44,21 @@ def grade_redteam(name: str, log=print) -> dict[str, Any]:
             src = f.read_text()
             for g in GRADERS:
                 r = grade(task, src, g)
-                rows.append({"task": i + 1, "cwe": cwe, "patch": pname, "intended_valid": pname == "fix", "grader": g,
-                             "accepted": bool(r.reward > 0.5), "reasons": r.reasons[:4]})
-    notes = {f"task{i + 1}": (REDTEAM / f"task{i + 1}" / "notes.md").read_text() if (REDTEAM / f"task{i + 1}" / "notes.md").exists() else ""
-             for i in range(len(CLASSES))}
+                rows.append(
+                    {
+                        "task": i + 1,
+                        "cwe": cwe,
+                        "patch": pname,
+                        "intended_valid": pname == "fix",
+                        "grader": g,
+                        "accepted": bool(r.reward > 0.5),
+                        "reasons": r.reasons[:4],
+                    }
+                )
+    notes = {
+        f"task{i + 1}": (REDTEAM / f"task{i + 1}" / "notes.md").read_text() if (REDTEAM / f"task{i + 1}" / "notes.md").exists() else ""
+        for i in range(len(CLASSES))
+    }
     summ = {}
     for g in GRADERS:
         rs = [r for r in rows if r["grader"] == g]

@@ -5,22 +5,27 @@ import pytest
 from drg.patch.sandbox import run
 
 CALL = [{"op": "health", "args": {}}]
-HEALTHY = "def health():\n    return {'status': 200, 'body': 'ok'}\nROUTES = {'health': (health, [])}\n" \
-          "def handle(req):\n    fn, ps = ROUTES[req['op']]\n    return fn()\n"
+HEALTHY = (
+    "def health():\n    return {'status': 200, 'body': 'ok'}\nROUTES = {'health': (health, [])}\n"
+    "def handle(req):\n    fn, ps = ROUTES[req['op']]\n    return fn()\n"
+)
 
 
 def _run(prelude: str):
     return run(prelude + "\n" + HEALTHY, CALL, {}, {})
 
 
-@pytest.mark.parametrize("prelude", [
-    "import socket\nsocket.socket()",
-    "import subprocess\nsubprocess.run(['true'])",
-    "import os\nos.system('true')",
-    "open('/tmp/drg-escape-test', 'w').write('x')",
-    "import sys\nsys._getframe(0)",
-    "import ctypes\nctypes.CDLL(None)",
-])
+@pytest.mark.parametrize(
+    "prelude",
+    [
+        "import socket\nsocket.socket()",
+        "import subprocess\nsubprocess.run(['true'])",
+        "import os\nos.system('true')",
+        "open('/tmp/drg-escape-test', 'w').write('x')",
+        "import sys\nsys._getframe(0)",
+        "import ctypes\nctypes.CDLL(None)",
+    ],
+)
 def test_blocked_at_import(prelude):
     out = _run(prelude)
     assert "import_error" in out or "error" in out, out

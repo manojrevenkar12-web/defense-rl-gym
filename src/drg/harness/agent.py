@@ -20,10 +20,14 @@ from typing import Any, Protocol
 from .. import config
 
 SYSTEMS = {
-    "patch": ("You are a security engineer. Fix the reported weakness in service.py so that no request can exploit it and every "
-              "legitimate request behaves as before. Use the tools; submit when done."),
-    "soc": ("You are an incident responder. Find out what happened, contain the intrusion without disrupting people who are "
-            "not affected, then submit a report. Every action costs time and the attacker keeps going."),
+    "patch": (
+        "You are a security engineer. Fix the reported weakness in service.py so that no request can exploit it and every "
+        "legitimate request behaves as before. Use the tools; submit when done."
+    ),
+    "soc": (
+        "You are an incident responder. Find out what happened, contain the intrusion without disrupting people who are "
+        "not affected, then submit a report. Every action costs time and the attacker keeps going."
+    ),
 }
 
 

@@ -28,8 +28,16 @@ def analyst(env: FeatureEnv, obs, mask, rng, threshold: float = 0.6) -> int:
     evidence passes a threshold, wait while the picture develops, submit near the end."""
     H = env.H
     present = obs[:, -1] > 0
-    alert = obs[:, I["office_shell"]] + obs[:, I["cred_dump"]] + obs[:, I["admin_logon_from_user_ws"]] + obs[:, I["odd_task"]] \
-        + 0.5 * obs[:, I["outbound_mb"]] + obs[:, I["svc_cmd"]] + obs[:, I["logon_from_dump_host"]] + 0.5 * obs[:, I["shared_rare_infra"]]
+    alert = (
+        obs[:, I["office_shell"]]
+        + obs[:, I["cred_dump"]]
+        + obs[:, I["admin_logon_from_user_ws"]]
+        + obs[:, I["odd_task"]]
+        + 0.5 * obs[:, I["outbound_mb"]]
+        + obs[:, I["svc_cmd"]]
+        + obs[:, I["logon_from_dump_host"]]
+        + 0.5 * obs[:, I["shared_rare_infra"]]
+    )
     for i in np.argsort(-alert):
         if present[i] and mask[H + i] and alert[i] >= threshold and obs[i, I["investigated"]] > 0:
             return int(H + i)

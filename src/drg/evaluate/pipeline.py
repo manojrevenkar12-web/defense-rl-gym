@@ -62,8 +62,7 @@ def step_redteam(profile: str) -> dict[str, Any]:
 def step_rl(profile: str) -> dict[str, Any]:
     from .rl_study import run_rl_study
 
-    return run_rl_study(str(run_dir(profile) / "rl"), workers=config.load("experiment")["workers"], log=log,
-                        overrides=prof(profile).get("rl"))
+    return run_rl_study(str(run_dir(profile) / "rl"), workers=config.load("experiment")["workers"], log=log, overrides=prof(profile).get("rl"))
 
 
 def step_heldout(profile: str) -> dict[str, Any]:
@@ -103,8 +102,16 @@ def step_gate(profile: str) -> bool:
     return gate(profile)
 
 
-STEPS = {"study": step_study, "redteam": step_redteam, "rl": step_rl, "heldout": step_heldout, "bench": step_bench,
-         "transcripts": step_transcripts, "report": step_report, "gate": step_gate}
+STEPS = {
+    "study": step_study,
+    "redteam": step_redteam,
+    "rl": step_rl,
+    "heldout": step_heldout,
+    "bench": step_bench,
+    "transcripts": step_transcripts,
+    "report": step_report,
+    "gate": step_gate,
+}
 ORDER = ("study", "redteam", "rl", "heldout", "bench", "transcripts", "report")
 
 

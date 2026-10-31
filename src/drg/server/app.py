@@ -103,10 +103,15 @@ def get(eid: str) -> dict[str, Any]:
 def metrics() -> PlainTextResponse:
     m = _metrics
     lines = [
-        "# TYPE drg_episodes_total counter", f"drg_episodes_total {m['episodes']}",
-        "# TYPE drg_steps_total counter", f"drg_steps_total {m['steps']}",
-        "# TYPE drg_episodes_finished_total counter", f"drg_episodes_finished_total {m['finished']}",
-        "# TYPE drg_reward_sum counter", f"drg_reward_sum {m['reward_sum']:.4f}",
-        "# TYPE drg_open_episodes gauge", f"drg_open_episodes {len(_episodes)}",
+        "# TYPE drg_episodes_total counter",
+        f"drg_episodes_total {m['episodes']}",
+        "# TYPE drg_steps_total counter",
+        f"drg_steps_total {m['steps']}",
+        "# TYPE drg_episodes_finished_total counter",
+        f"drg_episodes_finished_total {m['finished']}",
+        "# TYPE drg_reward_sum counter",
+        f"drg_reward_sum {m['reward_sum']:.4f}",
+        "# TYPE drg_open_episodes gauge",
+        f"drg_open_episodes {len(_episodes)}",
     ]
     return PlainTextResponse("\n".join(lines) + "\n")

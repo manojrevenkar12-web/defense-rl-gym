@@ -27,8 +27,9 @@ def _job(args: tuple[str, int]) -> list[dict[str, Any]]:
         src = task.source(variant)
         for g in GRADERS:
             r = grade(task, src, g)
-            rows.append({"cwe": cwe, "seed": seed, "two_sites": task.two_sites, "variant": variant, "valid": valid,
-                         "grader": g, "accepted": bool(r.reward > 0.5)})
+            rows.append(
+                {"cwe": cwe, "seed": seed, "two_sites": task.two_sites, "variant": variant, "valid": valid, "grader": g, "accepted": bool(r.reward > 0.5)}
+            )
     return rows
 
 

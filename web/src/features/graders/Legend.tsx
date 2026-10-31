@@ -5,7 +5,7 @@ export function MatrixLegend() {
     <p className={styles.legend}>
       <span>
         <span className={styles.key} style={{ background: 'var(--unearned)' }} aria-hidden="true" />
-        Paid, not earned: the deeper, the more often
+        Paid, not earned (the bar shows how often)
       </span>
       <span>
         <span className={styles.key} style={{ background: 'var(--withheld)' }} aria-hidden="true" />

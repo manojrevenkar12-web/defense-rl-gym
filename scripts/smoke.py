@@ -1,6 +1,6 @@
 """Smoke test against a running environment server: episodes over HTTP equal episodes run locally.
 
-    python scripts/smoke.py http://localhost:8080
+python scripts/smoke.py http://localhost:8080
 """
 
 from __future__ import annotations

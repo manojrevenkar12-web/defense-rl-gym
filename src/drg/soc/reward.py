@@ -41,8 +41,13 @@ def running(sc: Scenario, kind: str) -> float:
     n_srv = sum(1 for h in benign_iso if h.kind == "server" and not h.critical)
     n_dc = sum(1 for h in benign_iso if h.critical)
     caught = len(compromised & sc.isolated) / max(1, len(compromised))
-    return (r["isolated_benign_workstation"] * n_ws + r["isolated_benign_server"] * n_srv + r["isolated_domain_controller"] * n_dc
-            + r["per_tick"] * sc.now + r["compromised_isolated_share"] * caught)
+    return (
+        r["isolated_benign_workstation"] * n_ws
+        + r["isolated_benign_server"] * n_srv
+        + r["isolated_domain_controller"] * n_dc
+        + r["per_tick"] * sc.now
+        + r["compromised_isolated_share"] * caught
+    )
 
 
 def score(sc: Scenario, report: dict[str, Any], kind: str) -> dict[str, Any]:
@@ -58,9 +63,14 @@ def score(sc: Scenario, report: dict[str, Any], kind: str) -> dict[str, Any]:
         reward = c["naive"]["contained"] * contained
     else:
         r = c["robust"]
-        reward = (r["contained"] * contained + r["isolated_benign_workstation"] * n_ws + r["isolated_benign_server"] * n_srv
-                  + r["isolated_domain_controller"] * n_dc + r["per_tick"] * sc.ended_at
-                  + r["compromised_isolated_share"] * caught)
+        reward = (
+            r["contained"] * contained
+            + r["isolated_benign_workstation"] * n_ws
+            + r["isolated_benign_server"] * n_srv
+            + r["isolated_domain_controller"] * n_dc
+            + r["per_tick"] * sc.ended_at
+            + r["compromised_isolated_share"] * caught
+        )
     rep_hosts = set(report.get("compromised_hosts") or [])
     rep_accts = set(report.get("compromised_accounts") or [])
     stolen = set(sc.stolen)

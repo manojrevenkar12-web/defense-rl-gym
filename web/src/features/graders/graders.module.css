@@ -78,16 +78,38 @@ tr[data-first-invalid] > td {
   background: var(--sunken);
 }
 
+/* The number carries the value; the tint says which mistake; the bar under it says how big. */
+.cell[data-kind='unearned'],
+.cell[data-kind='withheld'] {
+  position: relative;
+  color: var(--ink);
+}
+
 .cell[data-kind='unearned'] {
-  background: color-mix(in srgb, var(--unearned) var(--size), var(--card));
+  background: color-mix(in srgb, var(--unearned) 16%, var(--card));
 }
 
 .cell[data-kind='withheld'] {
-  background: color-mix(in srgb, var(--withheld) var(--size), var(--card));
+  background: color-mix(in srgb, var(--withheld) 16%, var(--card));
 }
 
-.cell[data-strong] {
-  color: var(--on-strong);
+.cell[data-kind='unearned']::after,
+.cell[data-kind='withheld']::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: var(--size);
+  border-radius: 0 var(--radius-s) var(--radius-s) var(--radius-s);
+}
+
+.cell[data-kind='unearned']::after {
+  background: var(--unearned);
+}
+
+.cell[data-kind='withheld']::after {
+  background: var(--withheld);
 }
 
 .cell[data-kind='right'] {

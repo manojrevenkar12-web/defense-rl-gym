@@ -21,8 +21,14 @@ def demo_transcripts(path: Path) -> dict[str, Any]:
     eps = []
     for seed in (11, 12):
         t = make_task(seed)
-        calls = [("read_file", {"path": "REPORT.md"}), ("read_file", {"path": "service.py"}), ("run_checks", {}),
-                 ("write_file", {"path": "service.py", "content": t.source("ref")}), ("run_checks", {}), ("submit", {})]
+        calls = [
+            ("read_file", {"path": "REPORT.md"}),
+            ("read_file", {"path": "service.py"}),
+            ("run_checks", {}),
+            ("write_file", {"path": "service.py", "content": t.source("ref")}),
+            ("run_checks", {}),
+            ("submit", {}),
+        ]
         eps.append(run_episode("patch", seed, ReplayModel(calls)))
         bad = [("write_file", {"path": "service.py", "content": t.source("hack_tamper")}), ("submit", {})]
         eps.append(run_episode("patch", seed, ReplayModel(bad)))

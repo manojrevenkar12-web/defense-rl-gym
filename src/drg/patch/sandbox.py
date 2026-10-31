@@ -41,7 +41,13 @@ def run(source: str, calls: list[dict[str, Any]], world: dict[str, Any], files: 
         try:
             p = subprocess.run(
                 [sys.executable, "-I", "-S", str(RUNNER), str(work)],
-                input=job, capture_output=True, text=True, timeout=lim["wall_s"], env=env, cwd=tmp, preexec_fn=_limits,
+                input=job,
+                capture_output=True,
+                text=True,
+                timeout=lim["wall_s"],
+                env=env,
+                cwd=tmp,
+                preexec_fn=_limits,
             )
         except subprocess.TimeoutExpired:
             return {"error": "timeout"}

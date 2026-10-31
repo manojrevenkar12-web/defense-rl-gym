@@ -24,24 +24,54 @@ OFFICE = {"winword.exe", "excel.exe", "outlook.exe", "powerpnt.exe"}
 SHELLS = {"powershell.exe", "cmd.exe", "wscript.exe", "mshta.exe"}
 
 TOOLS = [
-    {"name": "list_alerts", "description": "Alerts raised so far (detections are noisy: some are routine admin work).",
-     "input_schema": {"type": "object", "properties": {}}},
-    {"name": "search", "description": "Search log events seen so far. Filters are optional and combined with AND.",
-     "input_schema": {"type": "object", "properties": {
-         "type": {"type": "string", "enum": ["auth", "process", "dns", "net"]}, "host": {"type": "string"}, "user": {"type": "string"},
-         "contains": {"type": "string", "description": "substring of the command line, query or source"},
-         "since": {"type": "integer"}, "limit": {"type": "integer", "maximum": 50}}}},
-    {"name": "inspect_host", "description": "Summary of one host: owner, recent processes, logons, outbound traffic.",
-     "input_schema": {"type": "object", "properties": {"host": {"type": "string"}}, "required": ["host"]}},
-    {"name": "isolate_host", "description": "Cut a host off the network. Stops an attacker there; also stops the people who use it.",
-     "input_schema": {"type": "object", "properties": {"host": {"type": "string"}}, "required": ["host"]}},
-    {"name": "disable_account", "description": "Disable an account everywhere.",
-     "input_schema": {"type": "object", "properties": {"user": {"type": "string"}}, "required": ["user"]}},
-    {"name": "submit_report", "description": "End the investigation with your findings.",
-     "input_schema": {"type": "object", "properties": {
-         "compromised_hosts": {"type": "array", "items": {"type": "string"}},
-         "compromised_accounts": {"type": "array", "items": {"type": "string"}},
-         "initial_access": {"type": "string", "enum": ["phish", "spray", "unknown"]}}, "required": ["compromised_hosts"]}},
+    {
+        "name": "list_alerts",
+        "description": "Alerts raised so far (detections are noisy: some are routine admin work).",
+        "input_schema": {"type": "object", "properties": {}},
+    },
+    {
+        "name": "search",
+        "description": "Search log events seen so far. Filters are optional and combined with AND.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "type": {"type": "string", "enum": ["auth", "process", "dns", "net"]},
+                "host": {"type": "string"},
+                "user": {"type": "string"},
+                "contains": {"type": "string", "description": "substring of the command line, query or source"},
+                "since": {"type": "integer"},
+                "limit": {"type": "integer", "maximum": 50},
+            },
+        },
+    },
+    {
+        "name": "inspect_host",
+        "description": "Summary of one host: owner, recent processes, logons, outbound traffic.",
+        "input_schema": {"type": "object", "properties": {"host": {"type": "string"}}, "required": ["host"]},
+    },
+    {
+        "name": "isolate_host",
+        "description": "Cut a host off the network. Stops an attacker there; also stops the people who use it.",
+        "input_schema": {"type": "object", "properties": {"host": {"type": "string"}}, "required": ["host"]},
+    },
+    {
+        "name": "disable_account",
+        "description": "Disable an account everywhere.",
+        "input_schema": {"type": "object", "properties": {"user": {"type": "string"}}, "required": ["user"]},
+    },
+    {
+        "name": "submit_report",
+        "description": "End the investigation with your findings.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "compromised_hosts": {"type": "array", "items": {"type": "string"}},
+                "compromised_accounts": {"type": "array", "items": {"type": "string"}},
+                "initial_access": {"type": "string", "enum": ["phish", "spray", "unknown"]},
+            },
+            "required": ["compromised_hosts"],
+        },
+    },
 ]
 
 
@@ -118,10 +148,15 @@ class SocEnv:
                 out = {"error": f"no host {h}"}
             else:
                 ev = [e for e in sc.visible() if e["host"] == h]
-                out = {"host": h, "kind": sc.host(h).kind, "owner": sc.host(h).owner, "isolated": h in sc.isolated,
-                       "processes": [f"{e['parent']} -> {e['image']}: {e['cmdline']}" for e in ev if e["type"] == "process" and e["cmdline"]][-15:],
-                       "logons": [f"{e['user']} from {e['src']} ({e['logon_type']}, {e['result']})" for e in ev if e["type"] == "auth"][-15:],
-                       "outbound": [f"{e['dst']}:{e['port']} {e['bytes_out']} bytes" for e in ev if e["type"] == "net"][-10:]}
+                out = {
+                    "host": h,
+                    "kind": sc.host(h).kind,
+                    "owner": sc.host(h).owner,
+                    "isolated": h in sc.isolated,
+                    "processes": [f"{e['parent']} -> {e['image']}: {e['cmdline']}" for e in ev if e["type"] == "process" and e["cmdline"]][-15:],
+                    "logons": [f"{e['user']} from {e['src']} ({e['logon_type']}, {e['result']})" for e in ev if e["type"] == "auth"][-15:],
+                    "outbound": [f"{e['dst']}:{e['port']} {e['bytes_out']} bytes" for e in ev if e["type"] == "net"][-10:],
+                }
         elif tool == "isolate_host":
             h = args.get("host")
             if h not in names:
@@ -156,8 +191,23 @@ class SocEnv:
 
 
 # ====================================================================== the learned-policy view
-FEATURES = ("office_shell", "encoded_ps", "cred_dump", "admin_logon_from_user_ws", "odd_task", "rare_dns", "outbound_mb",
-            "failed_remote", "is_server", "is_dc", "isolated", "investigated", "svc_cmd", "shared_rare_infra", "logon_from_dump_host")
+FEATURES = (
+    "office_shell",
+    "encoded_ps",
+    "cred_dump",
+    "admin_logon_from_user_ws",
+    "odd_task",
+    "rare_dns",
+    "outbound_mb",
+    "failed_remote",
+    "is_server",
+    "is_dc",
+    "isolated",
+    "investigated",
+    "svc_cmd",
+    "shared_rare_infra",
+    "logon_from_dump_host",
+)
 
 
 def host_features(sc: Scenario, investigated: set[str]) -> np.ndarray:

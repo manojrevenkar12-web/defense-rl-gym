@@ -5,8 +5,10 @@ must show the failure each one exists to show (this is what the study measures a
 
 import pytest
 
-from conftest import CWES
+from drg.patch.cwe import CLASSES
 from drg.patch.grader import grade, policy_violations
+
+CWES = sorted(CLASSES)
 
 SHAPES = [(c, two) for c in CWES for two in (False, True)]
 
@@ -59,16 +61,19 @@ def test_an_unparseable_or_crashing_patch_earns_nothing(tasks):
     assert grade(task, "", "robust").reward == 0.0
 
 
-@pytest.mark.parametrize("src,needle", [
-    ("import subprocess\n", "import subprocess"),
-    ("from ctypes import CDLL\n", "from ctypes import"),
-    ("x = eval('1')\n", "call eval()"),
-    ("import support\nsupport.shell = None\n", "assignment to the support module"),
-    ("import support\nsupport.shell.log.clear()\n", "call into support internals"),
-    ("import support\ndel support.WORLD['writes']\n", "assignment to the support module"),
-    ("x = ().__class__\n", "dunder attribute __class__"),
-    ("getattr(object, 'x')\n", "call getattr()"),
-])
+@pytest.mark.parametrize(
+    "src,needle",
+    [
+        ("import subprocess\n", "import subprocess"),
+        ("from ctypes import CDLL\n", "from ctypes import"),
+        ("x = eval('1')\n", "call eval()"),
+        ("import support\nsupport.shell = None\n", "assignment to the support module"),
+        ("import support\nsupport.shell.log.clear()\n", "call into support internals"),
+        ("import support\ndel support.WORLD['writes']\n", "assignment to the support module"),
+        ("x = ().__class__\n", "dunder attribute __class__"),
+        ("getattr(object, 'x')\n", "call getattr()"),
+    ],
+)
 def test_static_policy_flags(src, needle):
     assert any(needle in v for v in policy_violations(src)), policy_violations(src)
 

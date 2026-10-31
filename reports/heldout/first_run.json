@@ -1,0 +1,97 @@
+{
+ "recorded_at": "2026-10-31T13:26:33+0100",
+ "spec_sha256": "695c7f4dfc4211ff8a11891e28852778aad41e3f90c08789ca3004915bf29ca3",
+ "episodes": 200,
+ "policies": {
+  "naive_scratch_0": {
+   "reward": -4.1562,
+   "contained": 1.0,
+   "benign_isolated": 16.625,
+   "dc_isolated": 1.0,
+   "caught": 1.0,
+   "ticks": 26.24
+  },
+  "naive_scratch_1": {
+   "reward": -4.16045,
+   "contained": 1.0,
+   "benign_isolated": 16.645,
+   "dc_isolated": 1.0,
+   "caught": 1.0,
+   "ticks": 26.29
+  },
+  "robust_scratch_0": {
+   "reward": -0.04082499999999999,
+   "contained": 0.0,
+   "benign_isolated": 0.0,
+   "dc_isolated": 0.0,
+   "caught": 0.0,
+   "ticks": 8.165
+  },
+  "robust_scratch_1": {
+   "reward": -0.04082499999999999,
+   "contained": 0.0,
+   "benign_isolated": 0.0,
+   "dc_isolated": 0.0,
+   "caught": 0.0,
+   "ticks": 8.165
+  },
+  "naive_clone_0": {
+   "reward": -1.064125,
+   "contained": 1.0,
+   "benign_isolated": 5.165,
+   "dc_isolated": 0.47,
+   "caught": 0.7429166666666667,
+   "ticks": 48.0
+  },
+  "naive_clone_1": {
+   "reward": -1.26725,
+   "contained": 1.0,
+   "benign_isolated": 3.905,
+   "dc_isolated": 1.0,
+   "caught": 0.6458333333333333,
+   "ticks": 48.0
+  },
+  "robust_clone_0": {
+   "reward": 0.931825,
+   "contained": 0.99,
+   "benign_isolated": 0.48,
+   "dc_isolated": 0.0,
+   "caught": 0.6541666666666667,
+   "ticks": 30.885
+  },
+  "robust_clone_1": {
+   "reward": 0.9832249999999999,
+   "contained": 1.0,
+   "benign_isolated": 0.315,
+   "dc_isolated": 0.015,
+   "caught": 0.5833333333333333,
+   "ticks": 23.355
+  }
+ },
+ "baselines": {
+  "isolate_all": {
+   "reward": -4.19045,
+   "contained": 0.98,
+   "benign_isolated": 16.825,
+   "dc_isolated": 1.0,
+   "caught": 1.0,
+   "ticks": 26.29
+  },
+  "do_nothing": {
+   "reward": -0.04082499999999999,
+   "contained": 0.0,
+   "benign_isolated": 0.0,
+   "dc_isolated": 0.0,
+   "caught": 0.0,
+   "ticks": 8.165
+  },
+  "analyst": {
+   "reward": 0.09332499999999996,
+   "contained": 0.925,
+   "benign_isolated": 4.19,
+   "dc_isolated": 0.0,
+   "caught": 0.80125,
+   "ticks": 46.41
+  }
+ }
+}

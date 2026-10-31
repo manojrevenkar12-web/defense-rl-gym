@@ -41,9 +41,25 @@ def main() -> None:
     support.Shell._exec = exec_capture
     support.save_record = save_capture
 
-    blocked = ("socket.", "subprocess.", "os.system", "os.exec", "os.spawn", "os.posix_spawn", "os.fork", "os.kill",
-               "ctypes.", "gc.get_referrers", "gc.get_objects", "sys.settrace", "sys.setprofile",
-               "os.remove", "os.rename", "os.rmdir", "shutil.")
+    blocked = (
+        "socket.",
+        "subprocess.",
+        "os.system",
+        "os.exec",
+        "os.spawn",
+        "os.posix_spawn",
+        "os.fork",
+        "os.kill",
+        "ctypes.",
+        "gc.get_referrers",
+        "gc.get_objects",
+        "sys.settrace",
+        "sys.setprofile",
+        "os.remove",
+        "os.rename",
+        "os.rmdir",
+        "shutil.",
+    )
     real_root = os.path.realpath(root)
 
     def audit(event, args):

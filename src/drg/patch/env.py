@@ -18,14 +18,22 @@ from .grader import grade
 from .task import SUPPORT, Task, make_task
 
 TOOLS = [
-    {"name": "read_file", "description": "Read a file in the workspace: service.py, support.py or REPORT.md.",
-     "input_schema": {"type": "object", "properties": {"path": {"type": "string"}}, "required": ["path"]}},
-    {"name": "write_file", "description": "Replace service.py with new content. Other files cannot be written.",
-     "input_schema": {"type": "object", "properties": {"path": {"type": "string"}, "content": {"type": "string"}}, "required": ["path", "content"]}},
-    {"name": "run_checks", "description": "Run the two public requests from REPORT.md against the current service.py.",
-     "input_schema": {"type": "object", "properties": {}}},
-    {"name": "submit", "description": "Submit the current service.py as the fix. Ends the episode.",
-     "input_schema": {"type": "object", "properties": {}}},
+    {
+        "name": "read_file",
+        "description": "Read a file in the workspace: service.py, support.py or REPORT.md.",
+        "input_schema": {"type": "object", "properties": {"path": {"type": "string"}}, "required": ["path"]},
+    },
+    {
+        "name": "write_file",
+        "description": "Replace service.py with new content. Other files cannot be written.",
+        "input_schema": {"type": "object", "properties": {"path": {"type": "string"}, "content": {"type": "string"}}, "required": ["path", "content"]},
+    },
+    {
+        "name": "run_checks",
+        "description": "Run the two public requests from REPORT.md against the current service.py.",
+        "input_schema": {"type": "object", "properties": {}},
+    },
+    {"name": "submit", "description": "Submit the current service.py as the fix. Ends the episode.", "input_schema": {"type": "object", "properties": {}}},
 ]
 
 
@@ -67,8 +75,11 @@ class PatchEnv:
         elif tool == "submit":
             g = grade(self.task, self.files["service.py"], self.grader)
             self.done = True
-            return {"reward": g.reward, "functional_ok": g.functional_ok, "security_ok": g.security_ok,
-                    "policy_ok": g.policy_ok, "reasons": g.reasons[:10]}, g.reward, True
+            return (
+                {"reward": g.reward, "functional_ok": g.functional_ok, "security_ok": g.security_ok, "policy_ok": g.policy_ok, "reasons": g.reasons[:10]},
+                g.reward,
+                True,
+            )
         else:
             out = {"error": f"unknown tool {tool}"}
         if self.steps >= self.max_steps:

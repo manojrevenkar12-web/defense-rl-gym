@@ -27,7 +27,6 @@
   --withheld: #8a5300;
   --robust: #2443a8;
   --baseline: #6b6888;
-  --on-strong: #ffffff;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -65,7 +64,6 @@
     --withheld: #e9ad55;
     --robust: #9db0ff;
     --baseline: #9b98bb;
-    --on-strong: #121124;
     color-scheme: dark;
   }
 }

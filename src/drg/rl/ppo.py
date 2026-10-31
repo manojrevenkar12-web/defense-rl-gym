@@ -31,12 +31,12 @@ class HostPolicy(nn.Module):
         self.ctx = nn.Sequential(nn.Linear(2 * width + 1, width), nn.Tanh())
         self.inv = nn.Linear(2 * width, 1)
         self.iso = nn.Linear(2 * width, 1)
-        self.glob = nn.Linear(width, 2)      # wait, submit
+        self.glob = nn.Linear(width, 2)  # wait, submit
         self.value = nn.Sequential(nn.Linear(width, width), nn.Tanh(), nn.Linear(width, 1))
 
     def forward(self, obs: torch.Tensor, time_left: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
-        present = obs[..., -1:]                                  # (B, H, 1)
-        h = self.enc(obs) * present                              # (B, H, W)
+        present = obs[..., -1:]  # (B, H, 1)
+        h = self.enc(obs) * present  # (B, H, W)
         n = present.sum(1).clamp_min(1.0)
         mean = h.sum(1) / n
         mx = (h - 1e3 * (1 - present)).max(1).values
@@ -59,7 +59,7 @@ class PPOConfig:
     entropy: float = 0.01
     value_coef: float = 0.5
     max_steps: int = 120
-    value_warmup: int = 0      # iterations at the start that fit only the value head (after cloning)
+    value_warmup: int = 0  # iterations at the start that fit only the value head (after cloning)
 
     @classmethod
     def from_config(cls) -> PPOConfig:
@@ -99,9 +99,17 @@ def collect(policy: HostPolicy, family: str, reward: str, seeds: list[int], cfg:
                 break
         else:
             raise RuntimeError("episode exceeded max_steps")
-    return {"obs": np.array(obs_l), "tl": np.array(tl_l, np.float32), "mask": np.array(mask_l), "act": np.array(act_l),
-            "logp": np.array(logp_l, np.float32), "val": np.array(val_l, np.float32), "rew": np.array(rew_l, np.float32),
-            "done": np.array(done_l), "infos": infos}
+    return {
+        "obs": np.array(obs_l),
+        "tl": np.array(tl_l, np.float32),
+        "mask": np.array(mask_l),
+        "act": np.array(act_l),
+        "logp": np.array(logp_l, np.float32),
+        "val": np.array(val_l, np.float32),
+        "rew": np.array(rew_l, np.float32),
+        "done": np.array(done_l),
+        "infos": infos,
+    }
 
 
 def gae(b: dict[str, Any], cfg: PPOConfig) -> tuple[np.ndarray, np.ndarray]:
@@ -161,8 +169,17 @@ def clone(policy: HostPolicy, teacher, family: str, seeds: list[int], epochs: in
     return acc
 
 
-def train(family: str, reward: str, seed: int, cfg: PPOConfig | None = None, seed_base: int = 0, log=print, credit: str = "terminal",
-          name: str | None = None, init: HostPolicy | None = None) -> tuple[HostPolicy, list[dict[str, Any]]]:
+def train(
+    family: str,
+    reward: str,
+    seed: int,
+    cfg: PPOConfig | None = None,
+    seed_base: int = 0,
+    log=print,
+    credit: str = "terminal",
+    name: str | None = None,
+    init: HostPolicy | None = None,
+) -> tuple[HostPolicy, list[dict[str, Any]]]:
     cfg = cfg or PPOConfig.from_config()
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
@@ -204,8 +221,10 @@ def train(family: str, reward: str, seed: int, cfg: PPOConfig | None = None, see
         s["iteration"] = it
         curve.append(s)
         if it % 10 == 0 or it == cfg.iterations - 1:
-            log(f"[{name or reward} seed {seed}] it {it:3d} reward {s['reward']:+.3f} contained {s['contained']:.2f} "
-                f"benign isolated {s['benign_isolated']:.2f} caught {s['caught']:.2f} ({time.time() - t0:.0f}s)")
+            log(
+                f"[{name or reward} seed {seed}] it {it:3d} reward {s['reward']:+.3f} contained {s['contained']:.2f} "
+                f"benign isolated {s['benign_isolated']:.2f} caught {s['caught']:.2f} ({time.time() - t0:.0f}s)"
+            )
     return policy, curve
 
 
