@@ -1,0 +1,136 @@
+.matrix {
+  border-collapse: separate;
+  border-spacing: 3px;
+  width: 100%;
+  min-width: 720px;
+  font-variant-numeric: tabular-nums;
+}
+
+.matrix th {
+  text-align: start;
+  font-weight: 400;
+  vertical-align: bottom;
+}
+
+.matrix thead th {
+  padding: 0 var(--space-2) var(--space-3);
+  width: 15%;
+}
+
+.matrix thead th[data-robust] .gname {
+  color: var(--robust);
+}
+
+.corner {
+  font-weight: 700 !important;
+}
+
+.gname {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-s);
+  line-height: 1.2;
+}
+
+.gnote {
+  display: block;
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+  line-height: 1.3;
+  margin-top: var(--space-1);
+}
+
+.matrix tbody th {
+  padding: var(--space-2) var(--space-3) var(--space-2) 0;
+  font-weight: 700;
+  font-size: var(--text-s);
+  vertical-align: middle;
+}
+
+.should {
+  display: block;
+  font-weight: 400;
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+}
+
+tr[data-first-invalid] > * {
+  border-top: 2px solid var(--ink);
+}
+
+tr[data-first-invalid] > th,
+tr[data-first-invalid] > td {
+  box-shadow: 0 -5px 0 -3px var(--ink);
+}
+
+.cell,
+.total,
+.na {
+  text-align: center;
+  padding: var(--space-3) var(--space-2);
+  border-radius: var(--radius-s);
+  font-weight: 700;
+  font-size: var(--text-s);
+}
+
+.cell {
+  background: var(--sunken);
+}
+
+.cell[data-kind='unearned'] {
+  background: color-mix(in srgb, var(--unearned) var(--size), var(--card));
+}
+
+.cell[data-kind='withheld'] {
+  background: color-mix(in srgb, var(--withheld) var(--size), var(--card));
+}
+
+.cell[data-strong] {
+  color: var(--on-strong);
+}
+
+.cell[data-kind='right'] {
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.na {
+  color: var(--ink-soft);
+}
+
+.matrix tfoot th {
+  font-weight: 700;
+  font-size: var(--text-s);
+  padding-top: var(--space-4);
+}
+
+.total {
+  padding-top: var(--space-4);
+}
+
+.total[data-kind='unearned'] {
+  color: var(--unearned);
+}
+
+.total[data-kind='withheld'] {
+  color: var(--withheld);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  font-size: var(--text-s);
+  color: var(--ink-soft);
+  margin-top: var(--space-4);
+}
+
+.key {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-s);
+  vertical-align: -2px;
+  margin-inline-end: var(--space-2);
+}

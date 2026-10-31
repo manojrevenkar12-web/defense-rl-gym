@@ -1,0 +1,16 @@
+# Sizes per profile. `full` is the committed run; `quick` is what CI runs end to end.
+workers: 2
+profiles:
+  full:
+    tasks_per_class: 40
+    bench_episodes: 50
+  quick:
+    tasks_per_class: 2
+    bench_episodes: 5
+    rl:
+      iterations: 3
+      episodes_per_iter: 8
+      seeds: [0]
+      eval_episodes: 10
+      value_warmup: 1
+      clone: {episodes: 20, epochs: 5, lr: 0.001, tune_episodes: 6}

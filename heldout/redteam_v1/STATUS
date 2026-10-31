@@ -1,0 +1,5 @@
+regression
+Its failures were studied after its first run (reports/heldout/redteam_v1_first_run.json): the
+genuine IDOR fix in task3 locked administrators out because the task never told the agent that
+administrators may read every record. Task reports now state the access rule (Spec.policy). This
+set is kept, unchanged, as a regression set; redteam_v2 is the held-out set.

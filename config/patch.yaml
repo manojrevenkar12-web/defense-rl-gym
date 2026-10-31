@@ -1,0 +1,24 @@
+# The patching environment and its graders.
+sandbox:
+  memory_mb: 512
+  cpu_s: 10
+  file_mb: 4
+  wall_s: 20
+
+graders:
+  reference_match:
+    threshold: 0.85          # difflib similarity of the changed functions to the reference fix
+  robust:
+    allowed_imports: [json, os, re, html, shlex, ipaddress, string, pathlib, urllib.parse, typing, functools, support]
+    forbidden_calls: [exec, eval, compile, __import__, getattr, setattr, delattr, globals, vars, locals, breakpoint, input]
+
+study:
+  tasks_per_class: 40        # tasks per weakness class in the grader study
+  seed_base: 100000
+# Blind red-team sets (heldout/<name>/taskN, written from WRITING_PATCHES.md by someone who has
+# not seen the grader). Task i (1-based) is make_task(seed + i - 1, sorted(CWE classes)[i - 1]).
+redteam:
+  current: redteam_v2
+  sets:
+    redteam_v1: {seed: 900000}
+    redteam_v2: {seed: 910000}

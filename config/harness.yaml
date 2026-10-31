@@ -1,0 +1,5 @@
+# The tool-calling harness. The model is only called when ANTHROPIC_API_KEY is set.
+model: claude-sonnet-5-5
+max_tokens: 4096
+max_turns: 40
+max_result_chars: 12000

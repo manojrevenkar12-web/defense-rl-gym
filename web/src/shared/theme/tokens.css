@@ -1,0 +1,138 @@
+/*
+ * Tokens. A referee's scorecard: white cards on a pale lilac-grey ground, ink in indigo-black.
+ * Colour means one thing everywhere: raspberry is reward paid that was not earned (a hack or a
+ * broken fix accepted, the policy that learned to cut everyone off); ochre is reward withheld
+ * that was earned (a genuine fix rejected); cobalt is the robust reward and what it trained.
+ * Everything else stays in ink.
+ */
+@import '@fontsource/schibsted-grotesk/500.css';
+@import '@fontsource/schibsted-grotesk/700.css';
+@import '@fontsource/schibsted-grotesk/900.css';
+@import '@fontsource/atkinson-hyperlegible-next/400.css';
+@import '@fontsource/atkinson-hyperlegible-next/700.css';
+
+:root {
+  --font-display: 'Schibsted Grotesk', system-ui, sans-serif;
+  --font-body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+
+  --ground: #ecebf3;
+  --card: #ffffff;
+  --sunken: #e1e0ec;
+  --ink: #1c1a3a;
+  --ink-soft: #4f4c6e;
+  --rule: #c9c7da;
+  --focus: #2443a8;
+
+  --unearned: #b3124f;
+  --withheld: #8a5300;
+  --robust: #2443a8;
+  --baseline: #6b6888;
+  --on-strong: #ffffff;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 40px;
+  --space-7: 80px;
+
+  --radius-s: 3px;
+  --radius-l: 18px;
+
+  --text-xs: 0.78rem;
+  --text-s: 0.9rem;
+  --text-m: 1.0625rem;
+  --text-l: 1.5rem;
+  --text-xl: clamp(2.3rem, 5.4vw, 4.1rem);
+
+  --measure: 64ch;
+  --page: 1160px;
+  --tap: 44px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #121124;
+    --card: #1c1b33;
+    --sunken: #0d0c1b;
+    --ink: #ecebf7;
+    --ink-soft: #b0aed0;
+    --rule: #3a3860;
+    --focus: #9db0ff;
+    --unearned: #ff7aa6;
+    --withheld: #e9ad55;
+    --robust: #9db0ff;
+    --baseline: #9b98bb;
+    --on-strong: #121124;
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 var(--text-m) / 1.55 var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  max-width: var(--measure);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.skeleton {
+  border-radius: var(--radius-s);
+  background: linear-gradient(90deg, var(--sunken), var(--card), var(--sunken));
+  background-size: 300% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

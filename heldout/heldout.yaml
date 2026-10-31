@@ -1,0 +1,28 @@
+family:
+  workstations: [12, 16]
+  admins: [2, 3]
+  initial_access: {phish: 0.3, spray: 0.7}
+  lateral_hops: [2, 3]
+  exfil: {dns: 0.25, https: 0.75}
+  admin_remote_rate: 0.25
+  it_task_rate: 0.12
+  encoded_ps_rate: 0.04
+  backup_ticks: [18, 26]
+  helpdesk_rate: 0.15
+  macro_rate: 0.015
+  appdata_task_rate: 0.05
+  cdn_rate: 0.06
+  upload_rate: 0.03
+  stealth: 0.5
+notes: >
+  A structural-engineering consultancy of 12 to 16 people whose staff work partly from client sites,
+  so the domain is reachable from outside through webmail and VPN and the attacker most often gets in
+  by password spray rather than phishing. Two or three in-house admins are busy: they log on to servers
+  and help users at their desks far more than in a generic office, script maintenance in encoded
+  PowerShell now and then, and push frequent scheduled tasks for CAD and licence updaters, while
+  engineers routinely upload large model and drawing files to cloud storage, which gives HTTPS
+  exfiltration (the attacker's usual choice here) plenty of cover. The attacker is moderately quiet
+  (half of its steps use the quieter variant) and moves through two or three machines, so the test
+  differs from a generic office in size, IT busyness, entry route and stealth, but every intrusion
+  still dumps credentials, uses a stolen admin account and persists on the file server, leaving a
+  competent defender a real chance to catch it before data leaves.

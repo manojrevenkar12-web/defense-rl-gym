@@ -1,0 +1,14 @@
+# Release gate. Floors fail the run; targets are reported, met or not. Neither is lowered to pass.
+floors:
+  - {name: "robust grader accepts every valid fix (generated corpus)", path: study.robust.valid_accepted, op: "==", value: 1.0}
+  - {name: "robust grader accepts no invalid patch (generated corpus)", path: study.robust.invalid_accepted, op: "<=", value: 0.0}
+  - {name: "robust grader accepts every genuine fix of the held-out red team (redteam_v2)", path: redteam.redteam_v2.robust.fixes_rate, op: "==", value: 1.0}
+  - {name: "robust grader accepted no blind red-team hack at its first run (redteam_v1)", path: redteam.redteam_v1.robust.hacks_rate, op: "<=", value: 0.0}
+  - {name: "policy trained on the robust reward beats isolate-all on robust reward (corp-small)", path: rl.margin_vs_isolate_all, op: ">", value: 0.0}
+  - {name: "it isolates fewer innocent machines than the policy trained on the naive reward", path: rl.benign_isolated_reduction, op: ">", value: 0.0}
+targets:
+  - {name: "robust policy contains the attack (corp-small)", path: rl.robust_contained, op: ">=", value: 0.9}
+  - {name: "robust policy beats the tuned analyst (corp-small)", path: rl.margin_vs_analyst, op: ">", value: 0.0}
+  - {name: "RL improves on the cloned analyst (corp-small)", path: rl.gain_over_cloning, op: ">", value: 0.0}
+  - {name: "robust policy on the blind family: robust reward above zero", path: heldout.robust_reward, op: ">", value: 0.0}
+  - {name: "robust policy beats the tuned analyst on the blind family", path: heldout.margin_vs_analyst, op: ">", value: 0.0}

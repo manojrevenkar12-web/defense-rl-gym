@@ -1,0 +1,36 @@
+# Learned policy on the incident-response feature view.
+ppo:
+  iterations: 120
+  episodes_per_iter: 48
+  gamma: 0.99
+  lam: 0.95
+  clip: 0.2
+  lr: 0.0003
+  epochs: 4
+  minibatch: 512
+  entropy: 0.01
+  value_coef: 0.5
+  max_steps: 120
+  value_warmup: 5        # after cloning: fit the value head before moving the policy
+seeds: [0, 1]
+# What is trained. `init: clone` starts from behaviour cloning of the tuned rule-based analyst (the
+# supervised start that RL on language models also uses); `scratch` starts from random weights.
+# `credit` decides when the reward is paid, not what it is: `terminal` pays the whole reward at the
+# end; `stepwise` pays each decided term (an innocent machine cut off, an attacker's machine
+# isolated, time) at the step that caused it and the rest at the end; the undiscounted return is
+# the same. Each pair differs only in the reward.
+variants:
+  naive_scratch: {reward: naive, credit: stepwise, init: scratch}
+  robust_scratch: {reward: robust, credit: stepwise, init: scratch}
+  naive_clone: {reward: naive, credit: stepwise, init: clone}
+  robust_clone: {reward: robust, credit: stepwise, init: clone}
+clone:
+  episodes: 300           # teacher trajectories, from their own seed range
+  epochs: 30
+  lr: 0.001
+  tune_episodes: 60       # training seeds used to pick the analyst's threshold
+train_family: corp-small
+eval_families: [corp-small, corp-medium, noisy-admins]
+eval_episodes: 200
+seed_base: {train: 0, clone: 5000000, eval: 7000000}
+analyst_thresholds: [0.4, 0.6, 0.8, 1.0, 1.3, 1.6, 2.0]   # the grid the baseline is tuned over
